@@ -13,12 +13,6 @@ ul {
 
 //***END  Global rules
 
-.main-wrapper {
-    max-width: $main-widht;
-
-    margin: 0 auto;
-}
-
 .main-header {
     background-color: $color-dark-bg;
 }
@@ -59,6 +53,7 @@ ul {
     letter-spacing: 2px;
     text-decoration: none;
     color: #FFFFFF;
+
     &:hover {
         color: $color-gold;
         transition: 0.2s all;
@@ -67,14 +62,20 @@ ul {
 
 //***END  Header navigation area
 
-//***Header slider area
-.header-slider {
+//***Welcome slider area
+.welcome {
+    background-color: $color-dark-bg;
+}
+
+.welcome-slider {
     height: 750px;
+    max-width: $main-widht;
+    margin: 0 auto;
     position: relative;
     background-color: $color-dark-bg;
 }
 
-.header-slider__slogan-wrap {
+.welcome-slider__slogan-wrap {
     width: $content-width;
     margin: 0 auto;
     padding-top: 114px;
@@ -82,7 +83,7 @@ ul {
     z-index: 10;
 }
 
-.header-slider__slogan {
+.welcome-slider__slogan {
     margin: 0;
     width: 600px;
     font-family: $font-Forum;
@@ -94,7 +95,7 @@ ul {
     color: #FFFFFF;
 }
 
-.header-slider__sub-slogan {
+.welcome-slider__sub-slogan {
     font-family: $font-Roboto;
     font-weight: 300;
     font-size: 28px;
@@ -102,7 +103,7 @@ ul {
     color: #FFFFFF;
 }
 
-.header-slider__link {
+.welcome-slider__link {
     height: 75px;
     width: 360px;
     margin-top: 75px;
@@ -118,18 +119,19 @@ ul {
     letter-spacing: 2px;
     color: #FFFFFF;
     transition: 0.2s all;
+
     &:hover {
         background-color: $color-gold;
     }
 }
 
-.header-slider__image {
+.welcome-slider__image {
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
-//***END  Header slider area
+//***END  Welcome slider area
 
 
 @import "media";

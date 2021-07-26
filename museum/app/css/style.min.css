@@ -455,11 +455,6 @@ ul {
   list-style: none;
 }
 
-.main-wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
 .main-header {
   background-color: #030303;
 }
@@ -516,13 +511,19 @@ ul {
   transition: 0.2s all;
 }
 
-.header-slider {
+.welcome {
+  background-color: #030303;
+}
+
+.welcome-slider {
   height: 750px;
+  max-width: 1920px;
+  margin: 0 auto;
   position: relative;
   background-color: #030303;
 }
 
-.header-slider__slogan-wrap {
+.welcome-slider__slogan-wrap {
   width: 1440px;
   margin: 0 auto;
   padding-top: 114px;
@@ -530,7 +531,7 @@ ul {
   z-index: 10;
 }
 
-.header-slider__slogan {
+.welcome-slider__slogan {
   margin: 0;
   width: 600px;
   font-family: "Forum", cursive;
@@ -542,7 +543,7 @@ ul {
   color: #FFFFFF;
 }
 
-.header-slider__sub-slogan {
+.welcome-slider__sub-slogan {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 28px;
@@ -550,7 +551,7 @@ ul {
   color: #FFFFFF;
 }
 
-.header-slider__link {
+.welcome-slider__link {
   height: 75px;
   width: 360px;
   margin-top: 75px;
@@ -576,11 +577,11 @@ ul {
   transition: 0.2s all;
 }
 
-.header-slider__link:hover {
+.welcome-slider__link:hover {
   background-color: #9d8665;
 }
 
-.header-slider__image {
+.welcome-slider__image {
   position: absolute;
   bottom: 0;
   right: 0;

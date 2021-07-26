@@ -14,45 +14,57 @@
 </head>
 
 <body>
-  <div class="main-wrapper">
-    <header class="main-header">
 
-      <div class="main-header__nav-wrap">
-        <h1 class="logo-name">Louvre</h1>
-        <nav class="header-nav">
-          <ul class="header-nav__list">
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="#">Visiting</a>
-            </li>
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="#">Explore</a>
-            </li>
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="#">Video</a>
-            </li>
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="#">Tickets</a>
-            </li>
-            <li class="header-nav__item">
-              <a class="header-nav__link" href="#">Contacts</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+  <header class="main-header">
+    <div class="main-header__nav-wrap">
+      <h1 class="logo-name">Louvre</h1>
+      <nav class="header-nav">
+        <ul class="header-nav__list">
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Visiting</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Explore</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Video</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Tickets</a>
+          </li>
+          <li class="header-nav__item">
+            <a class="header-nav__link" href="#">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <div class="header-slider">
-        <div class="header-slider__slogan-wrap">
-          <h2 class="header-slider__slogan">Welcome to&nbspthe&nbspLouvre</h2>
-          <p class="header-slider__sub-slogan">From the castle to the museum</p>
-          <a class="header-slider__link" href="#">
-            <span class="header-slider__link-text">Discover the Louvre</span>
+  <main class="main-block">
+    <section class="welcome">
+      <div class="welcome-slider">
+        <div class="welcome-slider__slogan-wrap">
+          <h2 class="welcome-slider__slogan">Welcome to&nbspthe&nbspLouvre</h2>
+          <p class="welcome-slider__sub-slogan">From the castle to the museum</p>
+          <a class="welcome-slider__link" href="#">
+            <span class="welcome-slider__link-text">Discover the Louvre</span>
           </a>
         </div>
-        <img class="header-slider__image" src="img/bg-slider.jpg" alt="Louvre picture" width="1215" height="750">
+        <img class="welcome-slider__image" src="img/bg-slider.jpg" alt="Louvre picture" width="1215" height="750">
       </div>
+    </section>
 
-    </header>
-  </div>
+    <section class="visiting"></section>
+
+    <section class="explore"></section>
+
+    <section class="video"></section>
+
+    <section class="tickets"></section>
+
+    <section class="contacts"></section>
+  </main>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/libs.min.js"></script>

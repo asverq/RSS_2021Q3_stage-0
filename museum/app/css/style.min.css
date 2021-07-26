@@ -445,3 +445,143 @@ template {
 .slick-arrow.slick-hidden {
   display: none;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.main-header {
+  background-color: #030303;
+}
+
+.main-header__nav-wrap {
+  min-height: 200px;
+  width: 1440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.logo-name {
+  padding-left: 70px;
+  background: url(../img/header-logo.svg) no-repeat;
+  font-family: Forum;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.header-nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-nav__item {
+  margin-left: 76px;
+}
+
+.header-nav__link {
+  font-family: Roboto;
+  font-weight: 200;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.header-nav__link:hover {
+  color: #9d8665;
+  -webkit-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.header-slider {
+  height: 750px;
+  position: relative;
+  background-color: #030303;
+}
+
+.header-slider__slogan-wrap {
+  width: 1440px;
+  margin: 0 auto;
+  padding-top: 114px;
+  position: relative;
+  z-index: 10;
+}
+
+.header-slider__slogan {
+  margin: 0;
+  width: 600px;
+  font-family: "Forum", cursive;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.header-slider__sub-slogan {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+
+.header-slider__link {
+  height: 75px;
+  width: 360px;
+  margin-top: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  background-color: #710707;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  -webkit-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.header-slider__link:hover {
+  background-color: #9d8665;
+}
+
+.header-slider__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

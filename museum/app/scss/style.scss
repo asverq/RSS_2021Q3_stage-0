@@ -2,8 +2,134 @@
 @import "libs";
 @import "fonts";
 
+//***Global rules
+* {
+    box-sizing: border-box;
+}
 
+ul {
+    list-style: none;
+}
 
+//***END  Global rules
+
+.main-wrapper {
+    max-width: $main-widht;
+
+    margin: 0 auto;
+}
+
+.main-header {
+    background-color: $color-dark-bg;
+}
+
+//***Header navigation area
+.main-header__nav-wrap {
+    min-height: 200px;
+    width: $content-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo-name {
+    padding-left: 70px;
+    background: url(../img/header-logo.svg) no-repeat;
+    font-family: Forum;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header-nav__list {
+    display: flex;
+}
+
+.header-nav__item {
+    margin-left: 76px;
+}
+
+.header-nav__link {
+    font-family: Roboto;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+    &:hover {
+        color: $color-gold;
+        transition: 0.2s all;
+    }
+}
+
+//***END  Header navigation area
+
+//***Header slider area
+.header-slider {
+    height: 750px;
+    position: relative;
+    background-color: $color-dark-bg;
+}
+
+.header-slider__slogan-wrap {
+    width: $content-width;
+    margin: 0 auto;
+    padding-top: 114px;
+    position: relative;
+    z-index: 10;
+}
+
+.header-slider__slogan {
+    margin: 0;
+    width: 600px;
+    font-family: $font-Forum;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header-slider__sub-slogan {
+    font-family: $font-Roboto;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+}
+
+.header-slider__link {
+    height: 75px;
+    width: 360px;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: $color-dark-red;
+    font-family: $font-Roboto;
+    font-weight: 200;
+    font-size: 22px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    transition: 0.2s all;
+    &:hover {
+        background-color: $color-gold;
+    }
+}
+
+.header-slider__image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+//***END  Header slider area
 
 
 @import "media";

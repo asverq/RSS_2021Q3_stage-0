@@ -7,20 +7,42 @@
     box-sizing: border-box;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
 ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.major-heading {
+    font-family: $font-Forum;
+    font-weight: 400;
+    font-size: 80px;
+    letter-spacing: 5px;
+    line-height: 90px;
+    text-transform: uppercase;
 }
 
 //***END  Global rules
 
+
+
+//***Header navigation area
 .main-header {
     background-color: $color-dark-bg;
 }
 
-//***Header navigation area
 .main-header__nav-wrap {
     min-height: 200px;
-    width: $content-width;
+    max-width: $content-width;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,14 +91,14 @@ ul {
 
 .welcome-slider {
     height: 750px;
-    max-width: $main-widht;
+    max-width: $main-width;
     margin: 0 auto;
     position: relative;
     background-color: $color-dark-bg;
 }
 
 .welcome-slider__slogan-wrap {
-    width: $content-width;
+    max-width: $content-width;
     margin: 0 auto;
     padding-top: 114px;
     position: relative;
@@ -86,16 +108,11 @@ ul {
 .welcome-slider__slogan {
     margin: 0;
     width: 600px;
-    font-family: $font-Forum;
-    font-weight: 400;
-    font-size: 80px;
-    line-height: 90px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
     color: #FFFFFF;
 }
 
 .welcome-slider__sub-slogan {
+    margin-top: 25px;
     font-family: $font-Roboto;
     font-weight: 300;
     font-size: 28px;
@@ -106,7 +123,7 @@ ul {
 .welcome-slider__link {
     height: 75px;
     width: 360px;
-    margin-top: 75px;
+    margin-top: 78px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +149,97 @@ ul {
 }
 
 //***END  Welcome slider area
+
+//***Section Visiting
+.visiting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visiting__wrap {
+    max-width: $content-width;
+    margin-top: -3px;
+}
+
+.visiting__head {
+    position: relative;
+    color: $color-gold;
+
+    &::after {
+        content: "";
+        max-width: $content-width;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: -25px;
+        background-color: $color-dark-red;
+
+    }
+}
+
+.visiting__cards-wrap {
+    margin-top: 100px;
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card-item {
+    margin-bottom: 75px;
+}
+
+.card-head {
+    margin: 0;
+    margin-top: 23px;
+    position: relative;
+    font-family: $font-Forum;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 35px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #000000;
+
+    &::after {
+        content: "";
+        height: 2px;
+        width: 300px;
+        position: absolute;
+        bottom: -9px;
+        left: 0;
+        background-color: $color-dark-red;
+
+    }
+}
+
+.card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.card-description {
+    margin-top: 21px;
+    font-family: $font-Roboto;
+    font-weight: 200;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.card-sub-description {
+    margin-top: 10px;
+    font-family: $font-Roboto;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+//***END Section Visiting
 
 
 @import "media";

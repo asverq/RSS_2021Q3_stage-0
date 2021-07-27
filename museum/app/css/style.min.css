@@ -451,8 +451,28 @@ template {
           box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.major-heading {
+  font-family: "Forum", cursive;
+  font-weight: 400;
+  font-size: 80px;
+  letter-spacing: 5px;
+  line-height: 90px;
+  text-transform: uppercase;
 }
 
 .main-header {
@@ -461,7 +481,7 @@ ul {
 
 .main-header__nav-wrap {
   min-height: 200px;
-  width: 1440px;
+  max-width: 1440px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -517,14 +537,14 @@ ul {
 
 .welcome-slider {
   height: 750px;
-  max-width: 1920px;
+  max-width: 1911px;
   margin: 0 auto;
   position: relative;
   background-color: #030303;
 }
 
 .welcome-slider__slogan-wrap {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   padding-top: 114px;
   position: relative;
@@ -534,16 +554,11 @@ ul {
 .welcome-slider__slogan {
   margin: 0;
   width: 600px;
-  font-family: "Forum", cursive;
-  font-weight: 400;
-  font-size: 80px;
-  line-height: 90px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
   color: #FFFFFF;
 }
 
 .welcome-slider__sub-slogan {
+  margin-top: 25px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 28px;
@@ -554,7 +569,7 @@ ul {
 .welcome-slider__link {
   height: 75px;
   width: 360px;
-  margin-top: 75px;
+  margin-top: 78px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -585,4 +600,101 @@ ul {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.visiting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.visiting__wrap {
+  max-width: 1440px;
+  margin-top: -3px;
+}
+
+.visiting__head {
+  position: relative;
+  color: #9d8665;
+}
+
+.visiting__head::after {
+  content: "";
+  max-width: 1440px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  background-color: #710707;
+}
+
+.visiting__cards-wrap {
+  margin-top: 100px;
+}
+
+.card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-item {
+  margin-bottom: 75px;
+}
+
+.card-head {
+  margin: 0;
+  margin-top: 23px;
+  position: relative;
+  font-family: "Forum", cursive;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.card-head::after {
+  content: "";
+  height: 2px;
+  width: 300px;
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  background-color: #710707;
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.card-description {
+  margin-top: 21px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.card-sub-description {
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
 }

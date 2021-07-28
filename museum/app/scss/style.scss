@@ -31,6 +31,16 @@ html {
     text-transform: uppercase;
 }
 
+.head-underline::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -25px;
+    background-color: $color-dark-red;
+}
+
 //***END  Global rules
 
 
@@ -52,7 +62,7 @@ html {
 .logo-name {
     padding-left: 70px;
     background: url(../img/header-logo.svg) no-repeat;
-    font-family: Forum;
+    font-family: $font-Forum;
     font-weight: 400;
     font-size: 28px;
     letter-spacing: 5px;
@@ -165,17 +175,6 @@ html {
 .visiting__head {
     position: relative;
     color: $color-gold;
-
-    &::after {
-        content: "";
-        max-width: $content-width;
-        height: 3px;
-        position: absolute;
-        left: 0;
-        bottom: -25px;
-        background-color: $color-dark-red;
-
-    }
 }
 
 .visiting__cards-wrap {
@@ -189,7 +188,7 @@ html {
 }
 
 .card-item {
-    margin-bottom: 75px;
+    margin-bottom: 35px;
 }
 
 .card-head {
@@ -212,13 +211,18 @@ html {
         bottom: -9px;
         left: 0;
         background-color: $color-dark-red;
-
+        transition: 0.4s all;
     }
 }
 
 .card-link {
     text-decoration: none;
     display: block;
+    padding-bottom: 40px;
+
+    &:hover .card-head::after {
+        width: 100%;
+    }
 }
 
 .card-description {
@@ -239,7 +243,58 @@ html {
     color: #000000;
 }
 
-//***END Section Visiting
+//***END  Section Visiting
+
+//***Section explore
+.explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-dark-bg;
+    color: #FFFFFF;
+
+    &__wrap {
+        width: $content-width;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 75px 0;
+    }
+
+    &__head {
+        margin: 0;
+        margin-bottom: 103px;
+        position: relative;
+        color: #FFFFFF;
+    }
+
+    &__text {
+        padding-bottom: 25px;
+        font-family: $font-Roboto;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 38px;
+
+        &-wrap {
+            width: 659px;
+        }
+
+        &-in {
+            color: $color-gold;
+        }
+    }
+
+    &__image {
+        width: 720px;
+        height: 700px;
+        overflow: hidden;
+        box-sizing: content-box;
+        padding-top: 12px;
+    }
+}
+
+//***END  Section explore
 
 
 @import "media";

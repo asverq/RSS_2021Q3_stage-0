@@ -475,6 +475,16 @@ html {
   text-transform: uppercase;
 }
 
+.head-underline::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  background-color: #710707;
+}
+
 .main-header {
   background-color: #030303;
 }
@@ -497,7 +507,7 @@ html {
 .logo-name {
   padding-left: 70px;
   background: url(../img/header-logo.svg) no-repeat;
-  font-family: Forum;
+  font-family: "Forum", cursive;
   font-weight: 400;
   font-size: 28px;
   letter-spacing: 5px;
@@ -624,16 +634,6 @@ html {
   color: #9d8665;
 }
 
-.visiting__head::after {
-  content: "";
-  max-width: 1440px;
-  height: 3px;
-  position: absolute;
-  left: 0;
-  bottom: -25px;
-  background-color: #710707;
-}
-
 .visiting__cards-wrap {
   margin-top: 100px;
 }
@@ -650,7 +650,7 @@ html {
 }
 
 .card-item {
-  margin-bottom: 75px;
+  margin-bottom: 35px;
 }
 
 .card-head {
@@ -674,11 +674,19 @@ html {
   bottom: -9px;
   left: 0;
   background-color: #710707;
+  -webkit-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .card-link {
   text-decoration: none;
   display: block;
+  padding-bottom: 40px;
+}
+
+.card-link:hover .card-head::after {
+  width: 100%;
 }
 
 .card-description {
@@ -697,4 +705,67 @@ html {
   font-size: 18px;
   line-height: 21px;
   color: #000000;
+}
+
+.explore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #030303;
+  color: #FFFFFF;
+}
+
+.explore__wrap {
+  width: 1440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 75px 0;
+}
+
+.explore__head {
+  margin: 0;
+  margin-bottom: 103px;
+  position: relative;
+  color: #FFFFFF;
+}
+
+.explore__text {
+  padding-bottom: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 38px;
+}
+
+.explore__text-wrap {
+  width: 659px;
+}
+
+.explore__text-in {
+  color: #9d8665;
+}
+
+.explore__image {
+  width: 720px;
+  height: 700px;
+  overflow: hidden;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding-top: 12px;
 }

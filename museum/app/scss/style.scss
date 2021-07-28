@@ -296,5 +296,125 @@ html {
 
 //***END  Section explore
 
+//***Video Section
+.video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrap {
+        width: $content-width;
+        margin: 90px 0 32px;
+    }
+
+    &__description-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__description-head {
+        margin: 42px 0;
+        color: $color-gold;
+    }
+
+    &__description-text {
+        max-width: 720px;
+        font-family: $font-Roboto;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 38px;
+    }
+}
+
+.video-player {
+
+    &__video {
+        height: 629px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(../img/video-image.jpg) no-repeat;
+    }
+
+    .btn-on-screen {
+        height: 220px;
+    }
+
+    &__bar {
+        width: 100%;
+        height: 85px;
+        padding: 0 19px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #000000;
+    }
+}
+
+.btn {
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+    svg path {
+        transition: 0.3s all;
+    }
+
+    &:hover svg path {
+        fill: #777;
+    }
+}
+
+.btn-on-screen {
+    &:hover svg path {
+        fill: rgb(128, 175, 236);
+    }
+}
+
+.btn-screen {
+    height: 36px;
+}
+
+.progress-bar {
+    background: linear-gradient(to right, #24809E 0%, #24809E 40%, #fff 40%, #fff 100%);
+    height: 7px;
+    width: 820px;
+    outline: none;
+    cursor: pointer;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #FFFFFF;
+}
+
+.valume-wrap {
+    padding-left: 5px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-volume {
+    padding-right: 20px;
+}
+
+.volume-bar {
+    width: 155px;
+}
+
+//***END  Video Section
+
 
 @import "media";

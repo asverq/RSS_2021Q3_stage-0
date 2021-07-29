@@ -292,7 +292,7 @@ html {
         }
 
         &-in {
-            color: $color-gold;
+            color: #CAAA7D;
         }
     }
 
@@ -392,7 +392,11 @@ html {
 }
 
 .progress-bar {
-    background: linear-gradient(to right, #24809E 0%, #24809E 40%, #fff 40%, #fff 100%);
+    background: linear-gradient(to right,
+            #24809E 0%,
+            #24809E 40%,
+            #C4C4C4 40%,
+            #C4C4C4 100%);
     height: 7px;
     width: 820px;
     outline: none;
@@ -429,6 +433,7 @@ html {
 
 //***Ticket section
 .tickets {
+    padding-bottom: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -447,12 +452,9 @@ html {
     &__sub-wrap {
         margin-top: 102px;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    &__picture {
-        margin-bottom: 75px;
     }
 }
 
@@ -470,6 +472,7 @@ html {
         font-weight: 700;
         font-size: 28px;
         line-height: 33px;
+
         &-sum {
             margin-top: 25px;
             letter-spacing: 1.65px;
@@ -577,4 +580,64 @@ html {
 
 //***END  Ticket section
 
+//***Contacts Section
+.contacts {
+    padding-bottom: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__head {
+        margin-top: 78px;
+        position: relative;
+    }
+
+    &__wrap {
+        width: 1440px;
+    }
+
+    &__sub-wrap {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__addr-head {
+        font-family: $font-Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+    }
+
+    &__address {
+        margin-top: 32px;
+        padding-bottom: 10px;
+    }
+
+    &__list {
+        margin-top: 38px;
+    }
+
+    &__item {
+        margin-top: 20px;
+        font-family: $font-Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #000;
+    }
+
+    &__map-wrap {
+        margin-top: 22px;
+    }
+
+}
+
+//***END  Contacts Section
 @import "media";

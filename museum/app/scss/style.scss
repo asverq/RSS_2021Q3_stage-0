@@ -41,6 +41,17 @@ html {
     background-color: $color-dark-red;
 }
 
+@mixin hidden-object {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
 //***END  Global rules
 
 
@@ -416,5 +427,154 @@ html {
 
 //***END  Video Section
 
+//***Ticket section
+.tickets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-dark-bg;
+    color: #FFFFFF;
+
+    &__wrap {
+        width: 1440px;
+    }
+
+    &__head {
+        margin-top: 75px;
+        position: relative;
+    }
+
+    &__sub-wrap {
+        margin-top: 102px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__picture {
+        margin-bottom: 75px;
+    }
+}
+
+.calculator {
+    width: 720px;
+    display: flex;
+    justify-content: space-between;
+
+    &__type-wrap {
+        margin-left: 60px;
+    }
+
+    &__head {
+        font-family: $font-Roboto;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 33px;
+        &-sum {
+            margin-top: 25px;
+            letter-spacing: 1.65px;
+        }
+    }
+
+    &__text {
+        font-family: $font-Roboto;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+        color: #FFFFFF;
+    }
+
+    &__radio {
+        @include hidden-object;
+
+        &:checked+.calculator__ticket-type::after {
+            content: "";
+            height: 10px;
+            width: 10px;
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+            background-color: #FFFFFF;
+        }
+    }
+
+    &__ticket-type {
+        display: block;
+        margin-top: 50px;
+        padding-left: 40px;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            left: -1px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px #FFFFFF solid;
+            border-radius: 15px;
+        }
+    }
+
+    &__amount-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__number {
+        width: 70px;
+        padding-left: 11px;
+        background-color: transparent;
+        border: none;
+        font-family: $font-Roboto;
+        font-weight: 300;
+        font-size: 22px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+}
+
+.amount-wrap {
+    height: 90px;
+    width: 150px;
+    margin-bottom: 35px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calculator-btn {
+    height: 40px;
+    font-family: $font-Roboto;
+    font-weight: 400;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+.amount-wrap__number-wrap {
+    margin-top: 10px;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px #FFFFFF solid;
+}
+
+.calculator-btn-sum {
+    height: 50px;
+    width: 175px;
+    margin-top: 52px;
+    letter-spacing: 2px;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+//***END  Ticket section
 
 @import "media";

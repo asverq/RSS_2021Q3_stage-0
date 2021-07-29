@@ -198,9 +198,63 @@
       </div>
     </section>
 
-    <section class="tickets" id="tickets"></section>
+    <section class="tickets" id="tickets">
+      <div class="tickets__wrap">
+        <h3 class="tickets__head major-heading head-underline">Buy tickets</h3>
+        <div class="tickets__sub-wrap">
 
-    <section class="contacts" id="contacts"></section>
+          <img class="tickets__picture" src="img/ticket-picture.jpg" alt="ticket picture" width="720" height="550">
+
+          <form class="tickets__calculator calculator">
+
+            <div class="calculator__type-wrap">
+              <p class="calculator__head">Ticket Type</p>
+              <div>
+                <input class="calculator__radio" type="radio" name="radio" id="radio" value="Permanent exhibition" checked> 
+                <label class="calculator__ticket-type calculator__text" for="radio">Permanent exhibition</label>
+              </div>
+              <div>
+                <input class="calculator__radio" type="radio" name="radio" id="radio-2" value="Temporary exhibition">
+                <label class="calculator__ticket-type calculator__text" for="radio-2">Temporary exhibition</label>
+              </div>
+              <div>
+                <input class="calculator__radio" type="radio" name="radio" id="radio-3" value="Combined Admission">
+                <label class="calculator__ticket-type calculator__text" for="radio-3">Combined Admission</label>
+              </div>
+            </div>
+
+            <div class="calculator__amount-wrap">
+              <p class="calculator__head">Amount</p>
+              <div class="amount-wrap">
+                <p class="calculator__text">Basic 18+</p>
+                <div class="amount-wrap__number-wrap">
+                  <button class="btn calculator-btn" type="button" onclick="this.nextElementSibling.stepDown()">–</button>
+                  <input class="calculator__number" type="number" min="0" max="100" value="1" readonly>
+                  <button class="btn calculator-btn" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div>
+              </div>
+              <div class="amount-wrap">
+                <p class="calculator__text">Senior 65+</p>
+                <div class="amount-wrap__number-wrap">
+                  <button class="btn calculator-btn" type="button"
+                    onclick="this.nextElementSibling.stepDown()">–</button>
+                  <input class="calculator__number" type="number" min="0" max="100" value="1" readonly>
+                  <button class="btn calculator-btn" type="button"
+                    onclick="this.previousElementSibling.stepUp()">+</button>
+                </div>
+              </div>
+              <p class="calculator__head calculator__head-sum">Total €<span class="calculator__sum">220</span></p>
+              <button class="btn calculator-btn-sum calculator__text">Buy Now</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+
+    </section>
   </main>
 
 

@@ -2,6 +2,7 @@
 @import "libs";
 @import "fonts";
 
+
 //***Global rules
 * {
     box-sizing: border-box;
@@ -59,11 +60,21 @@ html {
 //***Header navigation area
 .main-header {
     background-color: $color-dark-bg;
+
+    &__logo-link {
+        text-decoration: none;
+        transition: 0.2s all;
+
+        &:hover {
+            filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
+        }
+    }
 }
 
 .main-header__nav-wrap {
     min-height: 200px;
     max-width: $content-width;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,7 +132,7 @@ html {
 .welcome-slider__slogan-wrap {
     max-width: $content-width;
     margin: 0 auto;
-    padding-top: 114px;
+    padding: 114px 20px 0;
     position: relative;
     z-index: 10;
 }
@@ -173,14 +184,16 @@ html {
 
 //***Section Visiting
 .visiting {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 }
 
 .visiting__wrap {
     max-width: $content-width;
-    margin-top: -3px;
+    margin: 0 auto;
+    // margin-top: 3px;
+    padding: 11px 20px 0;
 }
 
 .visiting__head {
@@ -258,19 +271,20 @@ html {
 
 //***Section explore
 .explore {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // // align-items: center;
+    // justify-content: center;
     background-color: $color-dark-bg;
     color: #FFFFFF;
 
     &__wrap {
-        width: $content-width;
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 75px 20px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 75px 0;
     }
 
     &__head {
@@ -309,13 +323,14 @@ html {
 
 //***Video Section
 .video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 
     &__wrap {
-        width: $content-width;
-        margin: 90px 0 32px;
+        margin: 0 auto;
+        padding: 90px 20px 32px;
+        max-width: $content-width;
     }
 
     &__description-wrap {
@@ -435,13 +450,13 @@ html {
 .tickets {
     padding-bottom: 75px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: $color-dark-bg;
     color: #FFFFFF;
 
     &__wrap {
-        width: 1440px;
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     &__head {
@@ -576,6 +591,12 @@ html {
     letter-spacing: 2px;
     color: #000000;
     background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: 0.2s all;
+
+    &:hover {
+        background-color: $color-gold;
+    }
 }
 
 //***END  Ticket section
@@ -583,23 +604,23 @@ html {
 //***Contacts Section
 .contacts {
     padding-bottom: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     &__head {
         margin-top: 78px;
         position: relative;
+        color: $color-gold;
     }
 
     &__wrap {
-        width: 1440px;
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     &__sub-wrap {
         display: flex;
         justify-content: space-between;
-
+        margin-top: 80px;
     }
 
     &__addr-head {
@@ -631,6 +652,11 @@ html {
     &__link {
         text-decoration: none;
         color: #000;
+        transition: 0.2s all;
+
+        &:hover {
+            text-shadow: -1px 1px 2px $color-gold;
+        }
     }
 
     &__map-wrap {
@@ -640,4 +666,90 @@ html {
 }
 
 //***END  Contacts Section
+
+//***Footer 
+.footer {
+    padding: 75px 0;
+    background-color: $color-dark-bg;
+
+    &__wrap {
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        margin-top: 5px;
+    }
+
+    &__logo-link {
+        height: 30px;
+        text-decoration: none;
+        color: #FFFFFF;
+        transition: 0.2s all;
+
+        &:hover {
+            filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
+        }
+    }
+
+    &__nav-wrap {
+        display: flex;
+    }
+
+    &__nav {
+        margin-top: -3px;
+        margin-left: -2px;
+    }
+
+    &__nav-list {
+        display: inline-block;
+    }
+
+    &__nav-item {
+        margin-left: 150px;
+    }
+
+    &__nav-link {
+        font-family: $font-Roboto;
+        font-weight: 200;
+        font-size: 22px;
+        line-height: 50px;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        text-decoration: none;
+        transition: 0.2s all;
+
+        &:hover {
+            color: $color-gold;
+        }
+    }
+
+    &__socials {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__socials-link {
+        height: 48px;
+        width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 24px;
+        border: 2px #FFFFFF solid;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: 0.2s all;
+
+        &:hover {
+            filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
+        }
+    }
+}
+
+//***Footer 
 @import "media";

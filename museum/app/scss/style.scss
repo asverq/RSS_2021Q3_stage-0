@@ -65,7 +65,8 @@ html {
         text-decoration: none;
         transition: 0.2s all;
 
-        &:hover {
+        &:hover,
+        .main-header__logo-link:active {
             filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
         }
     }
@@ -107,10 +108,11 @@ html {
     letter-spacing: 2px;
     text-decoration: none;
     color: #FFFFFF;
+    transition: 0.2s all;
 
-    &:hover {
+    &:hover,
+    .header-nav__link:active {
         color: $color-gold;
-        transition: 0.2s all;
     }
 }
 
@@ -172,6 +174,9 @@ html {
     &:hover {
         background-color: $color-gold;
     }
+    &:active {
+        background-color: $color-gold;
+    }
 }
 
 .welcome-slider__image {
@@ -183,16 +188,9 @@ html {
 //***END  Welcome slider area
 
 //***Section Visiting
-.visiting {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-}
-
 .visiting__wrap {
     max-width: $content-width;
     margin: 0 auto;
-    // margin-top: 3px;
     padding: 11px 20px 0;
 }
 
@@ -246,7 +244,7 @@ html {
 
     &:hover .card-head::after {
         width: 100%;
-    }
+    }    
 }
 
 .card-description {
@@ -271,9 +269,6 @@ html {
 
 //***Section explore
 .explore {
-    // display: flex;
-    // // align-items: center;
-    // justify-content: center;
     background-color: $color-dark-bg;
     color: #FFFFFF;
 
@@ -323,10 +318,6 @@ html {
 
 //***Video Section
 .video {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-
     &__wrap {
         margin: 0 auto;
         padding: 90px 20px 32px;
@@ -394,11 +385,17 @@ html {
     &:hover svg path {
         fill: #777;
     }
+    &:active svg path {
+        fill: #555;
+    }
 }
 
 .btn-on-screen {
     &:hover svg path {
         fill: rgb(128, 175, 236);
+    }
+    &:active svg path {
+        fill: rgb(97, 144, 206);
     }
 }
 
@@ -597,6 +594,9 @@ html {
     &:hover {
         background-color: $color-gold;
     }
+    &:active {
+        box-shadow: 0 0 5px $color-gold;
+    }
 }
 
 //***END  Ticket section
@@ -656,6 +656,9 @@ html {
 
         &:hover {
             text-shadow: -1px 1px 2px $color-gold;
+        }
+        &:active {
+            text-shadow: none;
         }
     }
 
@@ -723,6 +726,9 @@ html {
         transition: 0.2s all;
 
         &:hover {
+            color: $color-gold;
+        }
+        &:visited {
             color: $color-gold;
         }
     }

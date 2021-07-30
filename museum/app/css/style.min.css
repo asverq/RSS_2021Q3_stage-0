@@ -496,7 +496,8 @@ html {
   transition: 0.2s all;
 }
 
-.main-header__logo-link:hover {
+.main-header__logo-link:hover,
+.main-header__logo-link .main-header__logo-link:active {
   -webkit-filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
           filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
 }
@@ -545,13 +546,14 @@ html {
   letter-spacing: 2px;
   text-decoration: none;
   color: #FFFFFF;
-}
-
-.header-nav__link:hover {
-  color: #9d8665;
   -webkit-transition: 0.2s all;
   -o-transition: 0.2s all;
   transition: 0.2s all;
+}
+
+.header-nav__link:hover,
+.header-nav__link .header-nav__link:active {
+  color: #9d8665;
 }
 
 .welcome {
@@ -616,6 +618,10 @@ html {
 }
 
 .welcome-slider__link:hover {
+  background-color: #9d8665;
+}
+
+.welcome-slider__link:active {
   background-color: #9d8665;
 }
 
@@ -854,8 +860,16 @@ html {
   fill: #777;
 }
 
+.btn:active svg path {
+  fill: #555;
+}
+
 .btn-on-screen:hover svg path {
   fill: #80afec;
+}
+
+.btn-on-screen:active svg path {
+  fill: #6190ce;
 }
 
 .btn-screen {
@@ -1103,6 +1117,11 @@ html {
   background-color: #9d8665;
 }
 
+.calculator-btn-sum:active {
+  -webkit-box-shadow: 0 0 5px #9d8665;
+          box-shadow: 0 0 5px #9d8665;
+}
+
 .contacts {
   padding-bottom: 75px;
 }
@@ -1165,6 +1184,10 @@ html {
 
 .contacts__link:hover {
   text-shadow: -1px 1px 2px #9d8665;
+}
+
+.contacts__link:active {
+  text-shadow: none;
 }
 
 .contacts__map-wrap {
@@ -1239,6 +1262,10 @@ html {
 }
 
 .footer__nav-link:hover {
+  color: #9d8665;
+}
+
+.footer__nav-link:visited {
   color: #9d8665;
 }
 

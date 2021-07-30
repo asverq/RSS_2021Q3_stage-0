@@ -55,8 +55,6 @@ html {
 
 //***END  Global rules
 
-
-
 //***Header navigation area
 .main-header {
     background-color: $color-dark-bg;
@@ -70,16 +68,16 @@ html {
             filter: invert(56%) sepia(31%) saturate(363%) hue-rotate(356deg) brightness(90%) contrast(92%);
         }
     }
-}
 
-.main-header__nav-wrap {
-    min-height: 200px;
-    max-width: $content-width;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+    &__nav-wrap {
+        min-height: 200px;
+        max-width: $content-width;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
 }
 
 .logo-name {
@@ -129,79 +127,82 @@ html {
     margin: 0 auto;
     position: relative;
     background-color: $color-dark-bg;
-}
 
-.welcome-slider__slogan-wrap {
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 114px 20px 0;
-    position: relative;
-    z-index: 10;
-}
-
-.welcome-slider__slogan {
-    margin: 0;
-    width: 600px;
-    color: #FFFFFF;
-}
-
-.welcome-slider__sub-slogan {
-    margin-top: 25px;
-    font-family: $font-Roboto;
-    font-weight: 300;
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: #FFFFFF;
-}
-
-.welcome-slider__link {
-    height: 75px;
-    width: 360px;
-    margin-top: 78px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background-color: $color-dark-red;
-    font-family: $font-Roboto;
-    font-weight: 200;
-    font-size: 22px;
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: #FFFFFF;
-    transition: 0.2s all;
-
-    &:hover {
-        background-color: $color-gold;
+    &__slogan-wrap {
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 114px 20px 0;
+        position: relative;
+        z-index: 10;
     }
 
-    &:active {
-        background-color: $color-gold;
+    &__slogan {
+        margin: 0;
+        width: 600px;
+        color: #FFFFFF;
     }
-}
 
-.welcome-slider__image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    &__sub-slogan {
+        margin-top: 25px;
+        font-family: $font-Roboto;
+        font-weight: 300;
+        font-size: 28px;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+    }
+
+    &__link {
+        height: 75px;
+        width: 360px;
+        margin-top: 78px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: $color-dark-red;
+        font-family: $font-Roboto;
+        font-weight: 200;
+        font-size: 22px;
+        text-decoration: none;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        transition: 0.2s all;
+
+        &:hover {
+            background-color: $color-gold;
+        }
+
+        &:active {
+            background-color: $color-gold;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 //***END  Welcome slider area
 
 //***Section Visiting
-.visiting__wrap {
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 11px 20px 0;
-}
+.visiting {
 
-.visiting__head {
-    position: relative;
-    color: $color-gold;
-}
+    &__wrap {
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 11px 20px 0;
+    }
 
-.visiting__cards-wrap {
-    margin-top: 100px;
+    &__head {
+        position: relative;
+        color: $color-gold;
+    }
+
+    &__cards-wrap {
+        margin-top: 100px;
+    }
 }
 
 .cards {
@@ -371,6 +372,13 @@ html {
         justify-content: space-around;
         background-color: #000000;
     }
+
+    &__valume-wrap {
+        padding-left: 5px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .btn {
@@ -402,10 +410,6 @@ html {
     }
 }
 
-.btn-screen {
-    height: 36px;
-}
-
 .progress-bar {
     background: linear-gradient(to right,
             #24809E 0%,
@@ -429,19 +433,16 @@ html {
     background: #FFFFFF;
 }
 
-.valume-wrap {
-    padding-left: 5px;
-    padding-right: 10px;
-    display: flex;
-    align-items: center;
-}
-
 .btn-volume {
     padding-right: 20px;
 }
 
 .volume-bar {
     width: 155px;
+}
+
+.btn-fullscreen {
+    height: 36px;
 }
 
 //***END  Video Section
@@ -555,51 +556,51 @@ html {
         color: #FFFFFF;
         text-align: center;
     }
-}
 
-.amount-wrap {
-    height: 90px;
-    width: 150px;
-    margin-bottom: 35px;
-    padding-top: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.calculator-btn {
-    height: 40px;
-    font-family: $font-Roboto;
-    font-weight: 400;
-    font-size: 32px;
-    color: #FFFFFF;
-}
-
-.amount-wrap__number-wrap {
-    margin-top: 10px;
-    padding: 2px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px #FFFFFF solid;
-}
-
-.calculator-btn-sum {
-    height: 50px;
-    width: 175px;
-    margin-top: 52px;
-    letter-spacing: 2px;
-    color: #000000;
-    background-color: #FFFFFF;
-    border-radius: 2px;
-    transition: 0.2s all;
-
-    &:hover {
-        background-color: $color-gold;
+    &__amount-num-wrap {
+        height: 90px;
+        width: 150px;
+        margin-bottom: 35px;
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-    &:active {
-        box-shadow: 0 0 5px $color-gold;
+    &__num-btn-wrap {
+        margin-top: 10px;
+        padding: 2px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px #FFFFFF solid;
+    }
+
+    &-btn {
+        height: 40px;
+        font-family: $font-Roboto;
+        font-weight: 400;
+        font-size: 32px;
+        color: #FFFFFF;
+    }
+
+    &-btn-sum {
+        height: 50px;
+        width: 175px;
+        margin-top: 52px;
+        letter-spacing: 2px;
+        color: #000000;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        transition: 0.2s all;
+
+        &:hover {
+            background-color: $color-gold;
+        }
+
+        &:active {
+            box-shadow: 0 0 5px $color-gold;
+        }
     }
 }
 
@@ -677,7 +678,8 @@ html {
 
 //***Footer 
 .footer {
-    padding: 75px 0;
+    margin-top: -4px;
+    padding: 77px 0;
     background-color: $color-dark-bg;
 
     &__wrap {

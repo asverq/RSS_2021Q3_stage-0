@@ -843,6 +843,17 @@ html {
   background-color: #000000;
 }
 
+.video-player__valume-wrap {
+  padding-left: 5px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .btn {
   height: 30px;
   cursor: pointer;
@@ -872,10 +883,6 @@ html {
   fill: #6190ce;
 }
 
-.btn-screen {
-  height: 36px;
-}
-
 .progress-bar {
   background: -webkit-gradient(linear, left top, right top, from(#24809E), color-stop(40%, #24809E), color-stop(40%, #C4C4C4), to(#C4C4C4));
   background: -o-linear-gradient(left, #24809E 0%, #24809E 40%, #C4C4C4 40%, #C4C4C4 100%);
@@ -899,23 +906,16 @@ html {
   background: #FFFFFF;
 }
 
-.valume-wrap {
-  padding-left: 5px;
-  padding-right: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .btn-volume {
   padding-right: 20px;
 }
 
 .volume-bar {
   width: 155px;
+}
+
+.btn-fullscreen {
+  height: 36px;
 }
 
 .tickets {
@@ -1060,7 +1060,7 @@ html {
   text-align: center;
 }
 
-.amount-wrap {
+.calculator__amount-num-wrap {
   height: 90px;
   width: 150px;
   margin-bottom: 35px;
@@ -1077,15 +1077,7 @@ html {
           justify-content: space-between;
 }
 
-.calculator-btn {
-  height: 40px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  color: #FFFFFF;
-}
-
-.amount-wrap__number-wrap {
+.calculator__num-btn-wrap {
   margin-top: 10px;
   padding: 2px 0;
   display: -webkit-box;
@@ -1098,6 +1090,14 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   border: 3px #FFFFFF solid;
+}
+
+.calculator-btn {
+  height: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #FFFFFF;
 }
 
 .calculator-btn-sum {
@@ -1195,7 +1195,8 @@ html {
 }
 
 .footer {
-  padding: 75px 0;
+  margin-top: -4px;
+  padding: 77px 0;
   background-color: #030303;
 }
 

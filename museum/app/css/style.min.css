@@ -646,7 +646,7 @@ html {
   margin-top: 100px;
 }
 
-.card-list {
+.cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -657,11 +657,21 @@ html {
       flex-wrap: wrap;
 }
 
-.card-item {
+.cards__item {
   margin-bottom: 35px;
 }
 
-.card-head {
+.cards__link {
+  text-decoration: none;
+  display: block;
+  padding-bottom: 40px;
+}
+
+.cards__link:hover .cards__head::after {
+  width: 100%;
+}
+
+.cards__head {
   margin: 0;
   margin-top: 23px;
   position: relative;
@@ -674,7 +684,7 @@ html {
   color: #000000;
 }
 
-.card-head::after {
+.cards__head::after {
   content: "";
   height: 2px;
   width: 300px;
@@ -687,17 +697,7 @@ html {
   transition: 0.4s all;
 }
 
-.card-link {
-  text-decoration: none;
-  display: block;
-  padding-bottom: 40px;
-}
-
-.card-link:hover .card-head::after {
-  width: 100%;
-}
-
-.card-description {
+.cards__description {
   margin-top: 21px;
   font-family: "Roboto", sans-serif;
   font-weight: 200;
@@ -706,7 +706,7 @@ html {
   color: #000000;
 }
 
-.card-sub-description {
+.cards__sub-description {
   margin-top: 10px;
   font-family: "Roboto", sans-serif;
   font-weight: 200;

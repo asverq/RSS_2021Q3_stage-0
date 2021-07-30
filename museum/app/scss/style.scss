@@ -72,7 +72,6 @@ html {
     &__nav-wrap {
         min-height: 200px;
         max-width: $content-width;
-        padding: 0 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -108,8 +107,11 @@ html {
     color: #FFFFFF;
     transition: 0.2s all;
 
-    &:hover,
-    .header-nav__link:active {
+    &:hover {
+        color: $color-gold;
+    }
+
+    &:visited {
         color: $color-gold;
     }
 }
@@ -126,12 +128,15 @@ html {
     max-width: $main-width;
     margin: 0 auto;
     position: relative;
+    background-image: url(../img/bg-slider.jpg);
+    background-repeat: no-repeat;
+    background-position: calc(50% + 352px) 100%;
     background-color: $color-dark-bg;
 
     &__slogan-wrap {
         max-width: $content-width;
         margin: 0 auto;
-        padding: 114px 20px 0;
+        padding-top: 114px;
         position: relative;
         z-index: 10;
     }
@@ -192,7 +197,7 @@ html {
     &__wrap {
         max-width: $content-width;
         margin: 0 auto;
-        padding: 11px 20px 0;
+        padding-top: 11px;
     }
 
     &__head {
@@ -277,7 +282,7 @@ html {
     &__wrap {
         max-width: $content-width;
         margin: 0 auto;
-        padding: 75px 20px;
+        padding: 75px 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -322,7 +327,7 @@ html {
 .video {
     &__wrap {
         margin: 0 auto;
-        padding: 90px 20px 32px;
+        padding: 90px 0 32px;
         max-width: $content-width;
     }
 
@@ -457,7 +462,6 @@ html {
     &__wrap {
         max-width: $content-width;
         margin: 0 auto;
-        padding: 0 20px;
     }
 
     &__head {
@@ -619,7 +623,6 @@ html {
     &__wrap {
         max-width: $content-width;
         margin: 0 auto;
-        padding: 0 20px;
     }
 
     &__sub-wrap {
@@ -685,7 +688,6 @@ html {
     &__wrap {
         max-width: $content-width;
         margin: 0 auto;
-        padding: 0 20px;
         display: flex;
         justify-content: space-between;
     }

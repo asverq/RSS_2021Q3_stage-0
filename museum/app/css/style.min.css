@@ -504,8 +504,7 @@ html {
 
 .main-header__nav-wrap {
   min-height: 200px;
-  max-width: 1480px;
-  padding: 0 20px;
+  max-width: 1440px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,8 +550,11 @@ html {
   transition: 0.2s all;
 }
 
-.header-nav__link:hover,
-.header-nav__link .header-nav__link:active {
+.header-nav__link:hover {
+  color: #9d8665;
+}
+
+.header-nav__link:visited {
   color: #9d8665;
 }
 
@@ -562,16 +564,19 @@ html {
 
 .welcome-slider {
   height: 750px;
-  max-width: 1911px;
+  max-width: 1920px;
   margin: 0 auto;
   position: relative;
+  background-image: url(../img/bg-slider.jpg);
+  background-repeat: no-repeat;
+  background-position: calc(50% + 352px) 100%;
   background-color: #030303;
 }
 
 .welcome-slider__slogan-wrap {
-  max-width: 1480px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 114px 20px 0;
+  padding-top: 114px;
   position: relative;
   z-index: 10;
 }
@@ -632,9 +637,9 @@ html {
 }
 
 .visiting__wrap {
-  max-width: 1480px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 11px 20px 0;
+  padding-top: 11px;
 }
 
 .visiting__head {
@@ -721,9 +726,9 @@ html {
 }
 
 .explore__wrap {
-  max-width: 1480px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 75px 20px;
+  padding: 75px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -772,8 +777,8 @@ html {
 
 .video__wrap {
   margin: 0 auto;
-  padding: 90px 20px 32px;
-  max-width: 1480px;
+  padding: 90px 0 32px;
+  max-width: 1440px;
 }
 
 .video__description-wrap {
@@ -928,9 +933,8 @@ html {
 }
 
 .tickets__wrap {
-  max-width: 1480px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .tickets__head {
@@ -1133,9 +1137,8 @@ html {
 }
 
 .contacts__wrap {
-  max-width: 1480px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .contacts__sub-wrap {
@@ -1201,9 +1204,8 @@ html {
 }
 
 .footer__wrap {
-  max-width: 1480px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

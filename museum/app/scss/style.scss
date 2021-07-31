@@ -47,7 +47,7 @@ html {
     background-color: $color-dark-red;
 }
 
-@mixin hidden-object {
+.visibility-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -502,7 +502,7 @@ html {
     }
 
     &__radio {
-        @include hidden-object;
+        // @include hidden-object;
 
         &:checked+.calculator__ticket-type::after {
             content: "";

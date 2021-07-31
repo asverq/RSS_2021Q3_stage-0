@@ -1,4 +1,4 @@
-$(function () {});
+// $(function () {});
 
 const progress = document.querySelector(".progress-bar");
 

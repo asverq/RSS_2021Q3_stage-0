@@ -1292,6 +1292,17 @@ html {
   background-color: #710707;
 }
 
+.visibility-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
 .main-header {
   background-color: #030303;
 }
@@ -1775,17 +1786,6 @@ html {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-}
-
-.calculator__radio {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
 }
 
 .calculator__radio:checked + .calculator__ticket-type::after {

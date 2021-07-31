@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -60,7 +64,6 @@ html {
     background-color: $color-dark-bg;
 
     &__logo-link {
-        text-decoration: none;
         transition: 0.2s all;
 
         &:hover,
@@ -103,7 +106,6 @@ html {
     font-weight: 200;
     font-size: 22px;
     letter-spacing: 2px;
-    text-decoration: none;
     color: #FFFFFF;
     transition: 0.2s all;
 
@@ -111,7 +113,7 @@ html {
         color: $color-gold;
     }
 
-    &:visited {
+    &:active {
         color: $color-gold;
     }
 }
@@ -157,18 +159,14 @@ html {
     }
 
     &__link {
-        height: 75px;
-        width: 360px;
         margin-top: 78px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
+        padding: 25px 68px;
+        display: inline-block;
+        border-radius: 9px;
         background-color: $color-dark-red;
         font-family: $font-Roboto;
         font-weight: 200;
         font-size: 22px;
-        text-decoration: none;
         letter-spacing: 2px;
         color: #FFFFFF;
         transition: 0.2s all;
@@ -220,7 +218,6 @@ html {
     }
 
     &__link {
-        text-decoration: none;
         display: block;
         padding-bottom: 40px;
 
@@ -327,13 +324,13 @@ html {
 .video {
     &__wrap {
         margin: 0 auto;
-        padding: 90px 0 32px;
+        padding-top: 90px;
         max-width: $content-width;
     }
 
     &__description-wrap {
+        padding-bottom: 31px;
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
@@ -455,7 +452,6 @@ html {
 //***Ticket section
 .tickets {
     padding-bottom: 75px;
-    display: flex;
     background-color: $color-dark-bg;
     color: #FFFFFF;
 
@@ -465,7 +461,8 @@ html {
     }
 
     &__head {
-        margin-top: 75px;
+        margin-top: 0;
+        padding-top: 77px;
         position: relative;
     }
 
@@ -479,13 +476,9 @@ html {
 }
 
 .calculator {
-    width: 720px;
+    width: 660px;
     display: flex;
     justify-content: space-between;
-
-    &__type-wrap {
-        margin-left: 60px;
-    }
 
     &__head {
         font-family: $font-Roboto;
@@ -565,14 +558,14 @@ html {
         height: 90px;
         width: 150px;
         margin-bottom: 35px;
-        padding-top: 15px;
+        padding-top: 13px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
     &__num-btn-wrap {
-        margin-top: 10px;
+        margin-top: 12px;
         padding: 2px 0;
         display: flex;
         align-items: center;
@@ -613,6 +606,7 @@ html {
 //***Contacts Section
 .contacts {
     padding-bottom: 75px;
+    position: relative;
 
     &__head {
         margin-top: 78px;
@@ -658,7 +652,6 @@ html {
     }
 
     &__link {
-        text-decoration: none;
         color: #000;
         transition: 0.2s all;
 
@@ -698,7 +691,6 @@ html {
 
     &__logo-link {
         height: 30px;
-        text-decoration: none;
         color: #FFFFFF;
         transition: 0.2s all;
 
@@ -731,14 +723,13 @@ html {
         line-height: 50px;
         letter-spacing: 2px;
         color: #FFFFFF;
-        text-decoration: none;
         transition: 0.2s all;
 
         &:hover {
             color: $color-gold;
         }
 
-        &:visited {
+        &:active {
             color: $color-gold;
         }
     }
@@ -758,7 +749,6 @@ html {
         margin-left: 24px;
         border: 2px #FFFFFF solid;
         border-radius: 50%;
-        text-decoration: none;
         transition: 0.2s all;
 
         &:hover {

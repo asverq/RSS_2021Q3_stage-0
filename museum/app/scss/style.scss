@@ -176,7 +176,7 @@ html {
         }
 
         &:active {
-            background-color: $color-gold;
+            background-color: darken($color-gold, 10);
         }
     }
 

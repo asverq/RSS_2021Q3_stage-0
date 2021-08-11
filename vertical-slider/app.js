@@ -6,7 +6,7 @@ const upBtn = document.querySelector('.up-button'),
     allSlides = document.getElementsByClassName('slide'),
     allSideSlides = document.getElementsByClassName('side-slide'),
     height = mainSlide.clientHeight,
-    duration = '0.3s'
+    duration = 700
 
 function setCloneSlides() {
     // Clone MainSlide Slides
@@ -34,27 +34,32 @@ function setPosition() {
     sidebar.style.transitionDuration = "0s"
     setActiveSlide()
     setTimeout(() => {
-        mainSlide.style.transitionDuration = duration
+        mainSlide.style.transitionDuration = `${duration / 1000}s`
     }, 0);
     setTimeout(() => {
-        sidebar.style.transitionDuration = duration
+        sidebar.style.transitionDuration = `${duration / 1000}s`
     }, 0);
     sidebar.style.top = `-${(countSlides - 1) * 100}vh`
 }
 setPosition()
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowUp') changeSlide('up')
-    if (event.key === 'ArrowDown') changeSlide('down')
-})
+function listenerEvents() {
+    document.addEventListener('keydown', (event) => {
+        event.preventDefault()
+        if (event.key === 'ArrowUp') changeSlide('up')
+        if (event.key === 'ArrowDown') changeSlide('down')
+    })
 
-sliderContainer.addEventListener('mousewheel', event => {
-    if (event.deltaY === -100) changeSlide('up')
-    if (event.deltaY === 100) changeSlide('down')
-})
+    sliderContainer.addEventListener('mousewheel', event => {
+        event.preventDefault()
+        if (event.deltaY === -100) changeSlide('up')
+        if (event.deltaY === 100) changeSlide('down')
+    })
 
-upBtn.addEventListener('click', () => changeSlide('up'))
-downBtn.addEventListener('click', () => changeSlide('down'))
+    upBtn.addEventListener('click', () => changeSlide('up'))
+    downBtn.addEventListener('click', () => changeSlide('down'))
+}
+setTimeout(listenerEvents, duration + 300);
 
 function changeSlide(direction) {
     if (direction === 'up' && activeSlideIndex !== countSlides - 2 && activeSlideIndex !== countSlides - 1) {
@@ -64,7 +69,7 @@ function changeSlide(direction) {
     } else if (direction === 'up' && activeSlideIndex === countSlides - 2) {
         activeSlideIndex++
         setActiveSlide()
-        setTimeout(() => resetActiveIndex(1), 500)
+        setTimeout(() => resetActiveIndex(1), duration + 100)
         console.log(activeSlideIndex);
     }
 
@@ -75,7 +80,7 @@ function changeSlide(direction) {
     } else if (direction === 'down' && activeSlideIndex === 1) {
         activeSlideIndex--
         setActiveSlide()
-        setTimeout(() => resetActiveIndex(countSlides - 2), 500)
+        setTimeout(() => resetActiveIndex(countSlides - 2), duration + 100)
         console.log(activeSlideIndex);
     }
 }
@@ -94,6 +99,6 @@ function resetActiveIndex(index) {
 }
 
 function normalaizeDuration() {
-    mainSlide.style.transitionDuration = duration
-    sidebar.style.transitionDuration = duration
+    mainSlide.style.transitionDuration = `${duration / 1000}s`
+    sidebar.style.transitionDuration = `${duration / 1000}s`
 }

@@ -24,7 +24,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar>div {
@@ -50,7 +50,7 @@ body {
   top: 0;
   left: 35%;
   width: 65%;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .main-slide>div {

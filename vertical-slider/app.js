@@ -18,8 +18,8 @@ function verticalSlider() {
             lastSlide = allSlides[allSlides.length - 1],
             cloneLast = lastSlide.cloneNode(true)
 
-        mainSlide.appendChild(cloneFirst);
-        mainSlide.insertBefore(cloneLast, firstSlide);
+        mainSlide.appendChild(cloneFirst)
+        mainSlide.insertBefore(cloneLast, firstSlide)
 
         //Clone Sidebar Slides
         const firstSideSlide = allSideSlides[0],
@@ -27,8 +27,8 @@ function verticalSlider() {
             lastSideSlide = allSideSlides[allSideSlides.length - 1],
             cloneSideLast = lastSideSlide.cloneNode(true)
 
-        sidebar.appendChild(cloneSideFirst);
-        sidebar.insertBefore(cloneSideLast, firstSideSlide);
+        sidebar.appendChild(cloneSideFirst)
+        sidebar.insertBefore(cloneSideLast, firstSideSlide)
     }
     setCloneSlides()
 
@@ -38,54 +38,65 @@ function verticalSlider() {
     function setPosition() {
         blockDuration()
         setActiveSlide()
-        setTimeout(normalaizeDuration, 0);
+        setTimeout(normalaizeDuration, 0)
         sidebar.style.top = `-${(countSlides - 1) * 100}vh`
     }
     setPosition()
 
     document.addEventListener('keydown', (event) => {
-        event.preventDefault()
-        if (event.key === 'ArrowUp') scrollable === false || changeSlide('up')
-        if (event.key === 'ArrowDown') scrollable === false || changeSlide('down')
+        if (event.key === 'ArrowUp') {
+            event.preventDefault()
+            if (scrollable === true) {
+                changeSlide('up')
+            }
+        }
+        if (event.key === 'ArrowDown') {
+            event.preventDefault()
+            if (scrollable === true) {
+                changeSlide('down')
+            }
+        }
     })
 
-    sliderContainer.addEventListener('mousewheel', event => {
+    sliderContainer.addEventListener('wheel', event => {
         event.preventDefault()
-        if (event.deltaY === -100) scrollable === false || changeSlide('up')
-        if (event.deltaY === 100) scrollable === false || changeSlide('down')
+        if (event.deltaY < 0 && scrollable === true) changeSlide('up')
+        if (event.deltaY > 0 && scrollable === true) changeSlide('down')
     })
 
-    upBtn.addEventListener('click', () => scrollable === false || changeSlide('up'))
-    downBtn.addEventListener('click', () => scrollable === false || changeSlide('down'))
+    upBtn.addEventListener('click', () => {
+        if (scrollable === true) changeSlide('up')
+    })
+    downBtn.addEventListener('click', () => {
+        if (scrollable === true) changeSlide('down')
+    })
 
-    sliderContainer.addEventListener('dragstart', scrollable === false || dragStart)
-    sliderContainer.addEventListener('drag', scrollable === false || dragAction)
-    sliderContainer.addEventListener('dragend', scrollable === false || dragEnd)
+    sliderContainer.addEventListener('mousedown', moveStart)
+    sliderContainer.addEventListener('mouseup', moveEnd)
 
     let startPosY
     let endPosY
     let inDrag
 
-    function dragStart(event) {
-        sliderContainer.style.cursor = 'grab'
-        console.log(event);
+    function moveStart(event) {
+        event.preventDefault()
+        sliderContainer.addEventListener('mousemove', moveAction)
+        sliderContainer.style.cursor = 'grabbing'
         startPosY = event.clientY
     }
 
-    function dragAction(event) {
-        event.preventDefault()
-        sliderContainer.style.cursor = 'grabbing'
+    function moveAction(event) {
         blockDuration()
         inDrag = startPosY - event.clientY
         mainSlide.style.transform = `translateY(-${height * activeSlideIndex + inDrag}px)`
         sidebar.style.transform = `translateY(${height * activeSlideIndex + inDrag}px)`
     }
 
-    function dragEnd(event) {
+    function moveEnd(event) {
         sliderContainer.style.cursor = 'default'
         endPosY = event.clientY
+        sliderContainer.removeEventListener('mousemove', moveAction)
         normalaizeDuration()
-       
         detectDrag()
     }
 
@@ -93,12 +104,8 @@ function verticalSlider() {
         if (scrollable === true) {
             if (Math.abs(startPosY - endPosY) > 15) {
                 if (startPosY - endPosY > 0) {
-                    mainSlide.style.transform = `translateY(-${height * activeSlideIndex - inDrag}px)`
-                    sidebar.style.transform = `translateY(${height * activeSlideIndex - inDrag}px)`
                     changeSlide('up')
                 } else {
-                    mainSlide.style.transform = `translateY(-${height * activeSlideIndex - inDrag}px)`
-                    sidebar.style.transform = `translateY(${height * activeSlideIndex - inDrag}px)`
                     changeSlide('down')
                 }
             }
@@ -114,26 +121,26 @@ function verticalSlider() {
             scrollable = false
             activeSlideIndex++
             setActiveSlide()
-            setTimeout(unblockScrollable, duration + 50)
+            setTimeout(unblockScrollable, duration + 100)
         } else if (direction === 'up' && activeSlideIndex === countSlides - 2) {
             scrollable = false
             activeSlideIndex++
             setActiveSlide()
             setTimeout(() => resetActiveIndex(1), duration + 100)
-            setTimeout(unblockScrollable, duration + 50)
+            setTimeout(unblockScrollable, duration + 100)
         }
 
         if (direction === 'down' && activeSlideIndex !== 1 && activeSlideIndex !== 0) {
             scrollable = false
             activeSlideIndex--
             setActiveSlide()
-            setTimeout(unblockScrollable, duration + 50)
+            setTimeout(unblockScrollable, duration + 100)
         } else if (direction === 'down' && activeSlideIndex === 1) {
             scrollable = false
             activeSlideIndex--
             setActiveSlide()
             setTimeout(() => resetActiveIndex(countSlides - 2), duration + 100)
-            setTimeout(unblockScrollable, duration + 50)
+            setTimeout(unblockScrollable, duration + 100)
         }
     }
 

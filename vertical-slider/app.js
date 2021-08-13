@@ -6,7 +6,7 @@ const upBtn = document.querySelector('.up-button'),
     allSlides = document.getElementsByClassName('slide'),
     allSideSlides = document.getElementsByClassName('side-slide'),
     height = mainSlide.clientHeight,
-    duration = 500
+    duration = 900
 
 let scrollable = true
 
@@ -17,8 +17,8 @@ function setCloneSlides() {
         lastSlide = allSlides[allSlides.length - 1],
         cloneLast = lastSlide.cloneNode(true)
 
-    mainSlide.appendChild(cloneFirst);
-    mainSlide.insertBefore(cloneLast, firstSlide);
+    mainSlide.appendChild(cloneFirst)
+    mainSlide.insertBefore(cloneLast, firstSlide)
 
     //Clone Sidebar Slides
     const firstSideSlide = allSideSlides[0],
@@ -26,19 +26,19 @@ function setCloneSlides() {
         lastSideSlide = allSideSlides[allSideSlides.length - 1],
         cloneSideLast = lastSideSlide.cloneNode(true)
 
-    sidebar.appendChild(cloneSideFirst);
-    sidebar.insertBefore(cloneSideLast, firstSideSlide);
+    sidebar.appendChild(cloneSideFirst)
+    sidebar.insertBefore(cloneSideLast, firstSideSlide)
 }
 setCloneSlides()
 
 const countSlides = allSlides.length
-let activeSlideIndex = Math.floor(countSlides / 2)
+let activeSlideIndex = 1
 
 function setPosition() {
     mainSlide.style.transitionDuration = "0s"
     sidebar.style.transitionDuration = "0s"
     setActiveSlide()
-    setTimeout(normalaizeDuration, 0);    
+    setTimeout(normalaizeDuration, 0);
     sidebar.style.top = `-${(countSlides - 1) * 100}vh`
 }
 setPosition()
@@ -58,39 +58,32 @@ sliderContainer.addEventListener('mousewheel', event => {
 upBtn.addEventListener('click', () => scrollable === false || changeSlide('up'))
 downBtn.addEventListener('click', () => scrollable === false || changeSlide('down'))
 
+mainSlide.addEventListener('transitionend', (event) => {
+    if (event.returnValue === true) scrollable = true
+})
 
-function unblockScrollable() {
-    scrollable = true
-}
 
 function changeSlide(direction) {
     if (direction === 'up' && activeSlideIndex !== countSlides - 2 && activeSlideIndex !== countSlides - 1) {
         scrollable = false
         activeSlideIndex++
         setActiveSlide()
-        setTimeout(unblockScrollable, duration + 50)
     } else if (direction === 'up' && activeSlideIndex === countSlides - 2) {
         scrollable = false
         activeSlideIndex++
         setActiveSlide()
         setTimeout(() => resetActiveIndex(1), duration + 100)
-        setTimeout(unblockScrollable, duration + 50)
-        // console.log(activeSlideIndex);
     }
 
     if (direction === 'down' && activeSlideIndex !== 1 && activeSlideIndex !== 0) {
         scrollable = false
         activeSlideIndex--
         setActiveSlide()
-        setTimeout(unblockScrollable, duration + 50)
-        console.log(activeSlideIndex);
     } else if (direction === 'down' && activeSlideIndex === 1) {
         scrollable = false
         activeSlideIndex--
         setActiveSlide()
         setTimeout(() => resetActiveIndex(countSlides - 2), duration + 100)
-        setTimeout(unblockScrollable, duration + 50)
-        console.log(activeSlideIndex);
     }
 }
 
@@ -100,9 +93,9 @@ function setActiveSlide() {
 }
 
 function resetActiveIndex(index) {
+    activeSlideIndex = index
     mainSlide.style.transitionDuration = "0s"
     sidebar.style.transitionDuration = "0s"
-    activeSlideIndex = index
     setActiveSlide()
     setTimeout(normalaizeDuration, 0)
 }

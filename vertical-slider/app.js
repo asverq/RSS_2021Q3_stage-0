@@ -1,104 +1,207 @@
-const upBtn = document.querySelector('.up-button'),
-    downBtn = document.querySelector('.down-button'),
-    sidebar = document.querySelector('.sidebar'),
-    sliderContainer = document.querySelector('.container'),
-    mainSlide = document.querySelector('.main-slide'),
-    allSlides = document.getElementsByClassName('slide'),
-    allSideSlides = document.getElementsByClassName('side-slide'),
-    height = mainSlide.clientHeight,
-    duration = 700
+function verticalSlider() {
+    const upBtn = document.querySelector('.up-button'),
+        downBtn = document.querySelector('.down-button'),
+        sidebar = document.querySelector('.sidebar'),
+        sliderContainer = document.querySelector('.container'),
+        mainSlide = document.querySelector('.main-slide'),
+        allSlides = document.getElementsByClassName('slide'),
+        allSideSlides = document.getElementsByClassName('side-slide'),
+        height = mainSlide.clientHeight,
+        duration = 700
 
-function setCloneSlides() {
-    // Clone MainSlide Slides
-    const firstSlide = allSlides[0],
-        cloneFirst = firstSlide.cloneNode(true),
-        lastSlide = allSlides[allSlides.length - 1],
-        cloneLast = lastSlide.cloneNode(true)
-    mainSlide.appendChild(cloneFirst);
-    mainSlide.insertBefore(cloneLast, firstSlide);
-    //Clone Sidebar Slides
-    const firstSideSlide = allSideSlides[0],
-        cloneSideFirst = firstSideSlide.cloneNode(true),
-        lastSideSlide = allSideSlides[allSideSlides.length - 1],
-        cloneSideLast = lastSideSlide.cloneNode(true)
-    sidebar.appendChild(cloneSideFirst);
-    sidebar.insertBefore(cloneSideLast, firstSideSlide);
-}
-setCloneSlides()
+    let scrollable = true
 
-const countSlides = allSlides.length
-let activeSlideIndex = Math.floor(countSlides / 2)
+    function setCloneSlides() {
+        // Clone MainSlide Slides
+        const firstSlide = allSlides[0],
+            cloneFirst = firstSlide.cloneNode(true),
+            lastSlide = allSlides[allSlides.length - 1],
+            cloneLast = lastSlide.cloneNode(true)
 
-function setPosition() {
-    mainSlide.style.transitionDuration = "0s"
-    sidebar.style.transitionDuration = "0s"
-    setActiveSlide()
-    setTimeout(() => {
-        mainSlide.style.transitionDuration = `${duration / 1000}s`
-    }, 0);
-    setTimeout(() => {
-        sidebar.style.transitionDuration = `${duration / 1000}s`
-    }, 0);
-    sidebar.style.top = `-${(countSlides - 1) * 100}vh`
-}
-setPosition()
+        mainSlide.appendChild(cloneFirst)
+        mainSlide.insertBefore(cloneLast, firstSlide)
 
-function listenerEvents() {
+        //Clone Sidebar Slides
+        const firstSideSlide = allSideSlides[0],
+            cloneSideFirst = firstSideSlide.cloneNode(true),
+            lastSideSlide = allSideSlides[allSideSlides.length - 1],
+            cloneSideLast = lastSideSlide.cloneNode(true)
+
+        sidebar.appendChild(cloneSideFirst)
+        sidebar.insertBefore(cloneSideLast, firstSideSlide)
+    }
+    setCloneSlides()
+
+    const countSlides = allSlides.length
+    let activeSlideIndex = 1
+
+    function setPosition() {
+        blockDuration()
+        setActiveSlide()
+        setTimeout(normalaizeDuration, 0)
+        sidebar.style.top = `-${(countSlides - 1) * 100}vh`
+    }
+    setPosition()
+
     document.addEventListener('keydown', (event) => {
-        event.preventDefault()
-        if (event.key === 'ArrowUp') changeSlide('up')
-        if (event.key === 'ArrowDown') changeSlide('down')
+        if (event.key === 'ArrowUp') {
+            event.preventDefault()
+            if (scrollable === true) {
+                changeSlide('up')
+            }
+        }
+        if (event.key === 'ArrowDown') {
+            event.preventDefault()
+            if (scrollable === true) {
+                changeSlide('down')
+            }
+        }
     })
 
-    sliderContainer.addEventListener('mousewheel', event => {
+    sliderContainer.addEventListener('wheel', event => {
         event.preventDefault()
-        if (event.deltaY === -100) changeSlide('up')
-        if (event.deltaY === 100) changeSlide('down')
+        if (event.deltaY < 0 && scrollable === true) changeSlide('up')
+        if (event.deltaY > 0 && scrollable === true) changeSlide('down')
     })
 
-    upBtn.addEventListener('click', () => changeSlide('up'))
-    downBtn.addEventListener('click', () => changeSlide('down'))
-}
-setTimeout(listenerEvents, duration + 300);
+    upBtn.addEventListener('click', () => {
+        if (scrollable === true) changeSlide('up')
+    })
+    downBtn.addEventListener('click', () => {
+        if (scrollable === true) changeSlide('down')
+    })
 
-function changeSlide(direction) {
-    if (direction === 'up' && activeSlideIndex !== countSlides - 2 && activeSlideIndex !== countSlides - 1) {
-        activeSlideIndex++
-        setActiveSlide()
-        console.log(activeSlideIndex);
-    } else if (direction === 'up' && activeSlideIndex === countSlides - 2) {
-        activeSlideIndex++
-        setActiveSlide()
-        setTimeout(() => resetActiveIndex(1), duration + 100)
-        console.log(activeSlideIndex);
+    sliderContainer.addEventListener('mousedown', moveStart)
+    sliderContainer.addEventListener('mouseup', moveEnd)
+
+    let startPosY
+    let endPosY
+    let inDrag
+
+    function moveStart(event) {
+        event.preventDefault()
+        sliderContainer.addEventListener('mousemove', moveAction)
+        sliderContainer.style.cursor = 'grabbing'
+        startPosY = event.clientY
     }
 
-    if (direction === 'down' && activeSlideIndex !== 1 && activeSlideIndex !== 0) {
-        activeSlideIndex--
+    function moveAction(event) {
+        blockDuration()
+        inDrag = startPosY - event.clientY
+        mainSlide.style.transform = `translateY(-${height * activeSlideIndex + inDrag}px)`
+        sidebar.style.transform = `translateY(${height * activeSlideIndex + inDrag}px)`
+    }
+
+    function moveEnd(event) {
+        sliderContainer.style.cursor = 'default'
+        endPosY = event.clientY
+        sliderContainer.removeEventListener('mousemove', moveAction)
+        normalaizeDuration()
+        detectDrag()
+    }
+
+    sliderContainer.addEventListener('touchstart', touchStart)
+    sliderContainer.addEventListener('touchend', touchEnd)
+
+
+    function touchStart(event) {
+        event.preventDefault()
+        if (event.target.classList.contains('up-button') ||
+            event.target.classList.contains('fa-arrow-up') &&
+            scrollable === true) {
+            changeSlide('up')
+        }
+        if (event.target.classList.contains('down-button') ||
+            event.target.classList.contains('fa-arrow-down') &&
+            scrollable === true) {
+            changeSlide('down')
+        }
+        let touchObj = event.changedTouches[0]
+        sliderContainer.addEventListener('touchmove', touchAction)
+        startPosY = touchObj.clientY
+    }
+
+    function touchAction(event) {
+        let touchObj = event.changedTouches[0]
+        blockDuration()
+        inDrag = startPosY - touchObj.clientY
+        mainSlide.style.transform = `translateY(-${height * activeSlideIndex + inDrag}px)`
+        sidebar.style.transform = `translateY(${height * activeSlideIndex + inDrag}px)`
+    }
+
+    function touchEnd(event) {
+        let touchObj = event.changedTouches[0]
+        endPosY = touchObj.clientY
+        sliderContainer.removeEventListener('mousemove', moveAction)
+        normalaizeDuration()
+        detectDrag()
+    }
+
+    function detectDrag() {
+        if (scrollable === true) {
+            if (Math.abs(startPosY - endPosY) > 15) {
+                if (startPosY - endPosY > 0) {
+                    changeSlide('up')
+                } else {
+                    changeSlide('down')
+                }
+            }
+        }
+    }
+
+    function unblockScrollable() {
+        scrollable = true
+    }
+
+    function changeSlide(direction) {
+        if (direction === 'up' && activeSlideIndex !== countSlides - 2) {
+            scrollable = false
+            activeSlideIndex++
+            setActiveSlide()
+            setTimeout(unblockScrollable, duration + 100)
+        } else if (direction === 'up' && activeSlideIndex === countSlides - 2) {
+            scrollable = false
+            activeSlideIndex++
+            setActiveSlide()
+            setTimeout(() => resetActiveIndex(1), duration + 100)
+            setTimeout(unblockScrollable, duration + 100)
+        }
+
+        if (direction === 'down' && activeSlideIndex !== 1) {
+            scrollable = false
+            activeSlideIndex--
+            setActiveSlide()
+            setTimeout(unblockScrollable, duration + 100)
+        } else if (direction === 'down' && activeSlideIndex === 1) {
+            scrollable = false
+            activeSlideIndex--
+            setActiveSlide()
+            setTimeout(() => resetActiveIndex(countSlides - 2), duration + 100)
+            setTimeout(unblockScrollable, duration + 100)
+        }
+    }
+
+    function setActiveSlide() {
+        mainSlide.style.transform = `translateY(-${height * activeSlideIndex}px)`
+        sidebar.style.transform = `translateY(${height * activeSlideIndex}px)`
+    }
+
+    function resetActiveIndex(index) {
+        blockDuration()
+        activeSlideIndex = index
         setActiveSlide()
-        console.log(activeSlideIndex);
-    } else if (direction === 'down' && activeSlideIndex === 1) {
-        activeSlideIndex--
-        setActiveSlide()
-        setTimeout(() => resetActiveIndex(countSlides - 2), duration + 100)
-        console.log(activeSlideIndex);
+        setTimeout(normalaizeDuration, 0)
+    }
+
+    function blockDuration() {
+        mainSlide.style.transitionDuration = "0s"
+        sidebar.style.transitionDuration = "0s"
+    }
+
+    function normalaizeDuration() {
+        mainSlide.style.transitionDuration = `${duration / 1000}s`
+        sidebar.style.transitionDuration = `${duration / 1000}s`
     }
 }
 
-function setActiveSlide() {
-    mainSlide.style.transform = `translateY(-${height * activeSlideIndex}px)`
-    sidebar.style.transform = `translateY(${height * activeSlideIndex}px)`
-}
-
-function resetActiveIndex(index) {
-    mainSlide.style.transitionDuration = "0s"
-    sidebar.style.transitionDuration = "0s"
-    activeSlideIndex = index
-    setActiveSlide()
-    setTimeout(normalaizeDuration, 0)
-}
-
-function normalaizeDuration() {
-    mainSlide.style.transitionDuration = `${duration / 1000}s`
-    sidebar.style.transitionDuration = `${duration / 1000}s`
-}
+verticalSlider()

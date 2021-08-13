@@ -100,6 +100,43 @@ function verticalSlider() {
         detectDrag()
     }
 
+    sliderContainer.addEventListener('touchstart', touchStart)
+    sliderContainer.addEventListener('touchend', touchEnd)
+
+
+    function touchStart(event) {
+        event.preventDefault()
+        if (event.target.classList.contains('up-button') ||
+            event.target.classList.contains('fa-arrow-up') &&
+            scrollable === true) {
+            changeSlide('up')
+        }
+        if (event.target.classList.contains('down-button') ||
+            event.target.classList.contains('fa-arrow-down') &&
+            scrollable === true) {
+            changeSlide('down')
+        }
+        let touchObj = event.changedTouches[0]
+        sliderContainer.addEventListener('touchmove', touchAction)
+        startPosY = touchObj.clientY
+    }
+
+    function touchAction(event) {
+        let touchObj = event.changedTouches[0]
+        blockDuration()
+        inDrag = startPosY - touchObj.clientY
+        mainSlide.style.transform = `translateY(-${height * activeSlideIndex + inDrag}px)`
+        sidebar.style.transform = `translateY(${height * activeSlideIndex + inDrag}px)`
+    }
+
+    function touchEnd(event) {
+        let touchObj = event.changedTouches[0]
+        endPosY = touchObj.clientY
+        sliderContainer.removeEventListener('mousemove', moveAction)
+        normalaizeDuration()
+        detectDrag()
+    }
+
     function detectDrag() {
         if (scrollable === true) {
             if (Math.abs(startPosY - endPosY) > 15) {
@@ -117,7 +154,7 @@ function verticalSlider() {
     }
 
     function changeSlide(direction) {
-        if (direction === 'up' && activeSlideIndex !== countSlides - 2 && activeSlideIndex !== countSlides - 1) {
+        if (direction === 'up' && activeSlideIndex !== countSlides - 2) {
             scrollable = false
             activeSlideIndex++
             setActiveSlide()
@@ -130,7 +167,7 @@ function verticalSlider() {
             setTimeout(unblockScrollable, duration + 100)
         }
 
-        if (direction === 'down' && activeSlideIndex !== 1 && activeSlideIndex !== 0) {
+        if (direction === 'down' && activeSlideIndex !== 1) {
             scrollable = false
             activeSlideIndex--
             setActiveSlide()

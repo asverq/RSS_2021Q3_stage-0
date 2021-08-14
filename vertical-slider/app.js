@@ -1,13 +1,13 @@
 function verticalSlider() {
     const upBtn = document.querySelector('.up-button'),
         downBtn = document.querySelector('.down-button'),
-        sidebar = document.querySelector('.sidebar'),
-        sliderContainer = document.querySelector('.container'),
+        sidebar = document.querySelector('.left-slide'),
+        sliderContainer = document.querySelector('.slider-container'),
         mainSlide = document.querySelector('.main-slide'),
-        allSlides = document.getElementsByClassName('slide'),
-        allSideSlides = document.getElementsByClassName('side-slide'),
+        allSlides = document.getElementsByClassName('main-slide__item'),
+        allSideSlides = document.getElementsByClassName('left-slide__item'),
         height = mainSlide.clientHeight,
-        duration = 700
+        duration = 500
 
     let scrollable = true
 
@@ -17,16 +17,13 @@ function verticalSlider() {
             cloneFirst = firstSlide.cloneNode(true),
             lastSlide = allSlides[allSlides.length - 1],
             cloneLast = lastSlide.cloneNode(true)
-
         mainSlide.appendChild(cloneFirst)
         mainSlide.insertBefore(cloneLast, firstSlide)
-
         //Clone Sidebar Slides
         const firstSideSlide = allSideSlides[0],
             cloneSideFirst = firstSideSlide.cloneNode(true),
             lastSideSlide = allSideSlides[allSideSlides.length - 1],
             cloneSideLast = lastSideSlide.cloneNode(true)
-
         sidebar.appendChild(cloneSideFirst)
         sidebar.insertBefore(cloneSideLast, firstSideSlide)
     }
@@ -36,12 +33,12 @@ function verticalSlider() {
     let activeSlideIndex = 1
 
     function setPosition() {
-        blockDuration()
         setActiveSlide()
         setTimeout(normalaizeDuration, 0)
-        sidebar.style.top = `-${(countSlides - 1) * 100}vh`
+        sidebar.style.top = `-${(countSlides - 1) * 100}%`
     }
     setPosition()
+
 
     document.addEventListener('keydown', (event) => {
         if (event.key === 'ArrowUp') {
@@ -103,7 +100,6 @@ function verticalSlider() {
     sliderContainer.addEventListener('touchstart', touchStart)
     sliderContainer.addEventListener('touchend', touchEnd)
 
-
     function touchStart(event) {
         event.preventDefault()
         if (event.target.classList.contains('up-button') ||
@@ -148,6 +144,7 @@ function verticalSlider() {
             }
         }
     }
+
 
     function unblockScrollable() {
         scrollable = true

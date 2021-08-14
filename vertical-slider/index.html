@@ -2,89 +2,85 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Слайдер | Проект 3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link type="image/png" rel="icon" href="img/icon.png">
+  <title>Vertical-Slider</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <div class="side-slide" style="background: linear-gradient(229.99deg, #11DEE9 -26%, #017E8B 145%);">
-        <h1>Snow in the desert</h1>
-        <p>Love, death & robots</p>
-        <h2>Slide - 7</h2>
+  <div class="wrapper">
+    <div class="slider-container">
+      <div class="left-slide">
+        <div class="left-slide__item" style="background: linear-gradient(229.99deg, #9ae6c6 -26%, #6e9b89 145%);">
+          <h1>Freedom and peace </h1>
+          <p>Enjoy every moment </p>
+          <h2>Slide - 7</h2>
+        </div>
+        <div class="left-slide__item" style="background: linear-gradient(215.32deg, #e6953a -1%, #d4a43a 124%);">
+          <h1>Beauty and the Beast</h1>
+          <p>A life is a moment </p>
+          <h2>Slide - 6</h2>
+        </div>
+        <div class="left-slide__item" style="background: linear-gradient(221.87deg, #90a5df 1%, #314c75 128%);">
+          <h1>Happy Morning</h1>
+          <p>Every day</p>
+          <h2>Slide - 5</h2>
+        </div>
+        <div class="left-slide__item" style="background: linear-gradient(220.16deg, #b9b48b -8%, #a08c6e 138%);">
+          <h1>Sunset Beach</h1>
+          <p>Relax</p>
+          <h2>Slide - 4</h2>
+        </div>
+        <div class="left-slide__item" style="background: linear-gradient(220.16deg, #6d6d6d -8%, #181818 138%);">
+          <h1>Explore the World</h1>
+          <p>Travel to you dreams</p>
+          <h2>Slide - 3</h2>
+        </div>
+        <div class="left-slide__item" style="background: linear-gradient(220.16deg, #7a594d 138%, #7B7B7D -8%);">
+          <h1>Beautiful World</h1>
+          <p> I can see are blue skies</p>
+          <h2>Slide - 2</h2>
+        </div>
+        <div class="left-slide__item" style="background: linear-gradient(220.16deg, #91aac4 -8%, #619BDB 108%);">
+          <h1>Ice Nature</h1>
+          <p>Water frozen</p>
+          <h2>Slide - 1</h2>
+        </div>
       </div>
-      <div class="side-slide" style="background: linear-gradient(215.32deg, #F90306 -1%, #9E0706 124%);">
-        <h1>Life Hutch</h1>
-        <p>Love, death & robots</p>
-        <h2>Slide - 6</h2>
+      <div class="main-slide">
+        <div class="main-slide__item" style="background-image: url(img/1.jpg);">
+          <h2>Slide - 1</h2>
+        </div>
+        <div class="main-slide__item" style="background-image: url(img/2.jpg);">
+          <h2>Slide - 2</h2>
+        </div>
+        <div class="main-slide__item" style="background-image: url(img/3.jpg);">
+          <h2>Slide - 3</h2>
+        </div>
+        <div class="main-slide__item" style="background-image: url(img/4.jpg);">
+          <h2>Slide - 4</h2>
+        </div>
+        <div class="main-slide__item" style="background-image: url(img/5.jpg);">
+          <h2>Slide - 5</h2>
+        </div>
+        <div class="main-slide__item" style="background-image: url(img/6.jpg);">
+          <h2>Slide - 6</h2>
+        </div>
+        <div class="main-slide__item" style="background-image: url(img/7.jpg);">
+          <h2>Slide - 7</h2>
+        </div>
       </div>
-      <div class="side-slide" style="background: linear-gradient(221.87deg, #8308EA 1%, #5305AF 128%);">
-        <h1>Zima Blue</h1>
-        <p>Love, death & robots</p>
-        <h2>Slide - 5</h2>
+      <div class="controls">
+        <button class="down-button">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button class="up-button">
+          <i class="fas fa-arrow-up"></i>
+        </button>
       </div>
-      <div class="side-slide" style="background: linear-gradient(220.16deg, #FFE101 -8%, #F39102 138%);">
-        <h1>Automated Customer Service</h1>
-        <p>Love, death & robots</p>
-        <h2>Slide - 4</h2>
-      </div>
-      <div class="side-slide" style="background: linear-gradient(220.16deg, #6d6d6d -8%, #181818 138%);">
-        <h1>Gun's and Booms</h1>
-        <p>Love, death & Gun's</p>
-        <h2>Slide - 3</h2>
-      </div>
-      <div class="side-slide" style="background: linear-gradient(220.16deg, #491b4b -8%, #7843b6 138%);">
-        <h1>You CAN</h1>
-        <p>Love, death & Minds</p>
-        <h2>Slide - 2</h2>
-      </div>
-      <div class="side-slide" style="background: linear-gradient(220.16deg, #5f0c13 -8%, #1c1c1d 138%);">
-        <h1>Laser Blum</h1>
-        <p>Love, death & stars</p>
-        <h2>Slide - 1</h2>
-      </div>
-    </div>
-    <div class="main-slide">
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1614889273226-ce351419bbf7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1250&q=80');">
-        <h2>Slide - 1</h2>
-      </div>
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1618333023204-13914a537522?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80');">
-        <h2>Slide - 2</h2>
-      </div>
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1627599515909-2a425f9d142a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80');">
-        <h2>Slide - 3</h2>
-      </div>
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1601574968106-b312ac309953?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1996&q=80');">
-        <h2>Slide - 4</h2>
-      </div>
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2023&q=80');">
-        <h2>Slide - 5</h2>
-      </div>
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1501529301789-b48c1975542a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
-        <h2>Slide - 6</h2>
-      </div>
-      <div class="slide"
-        style="background-image: url('https://images.unsplash.com/photo-1520263115673-610416f52ab6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
-        <h2>Slide - 7</h2>
-      </div>
-    </div>
-    <div class="controls">
-      <button class="down-button">
-        <i class="fas fa-arrow-down"></i>
-      </button>
-      <button class="up-button">
-        <i class="fas fa-arrow-up"></i>
-      </button>
     </div>
   </div>
   <script src="app.js"></script>

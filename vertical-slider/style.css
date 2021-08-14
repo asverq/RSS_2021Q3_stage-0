@@ -1,33 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
   height: 100vh;
 }
 
-.container {
+.slider-container {
+  width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
 }
 
-.sidebar {
+.left-slide {
   height: 100%;
   width: 35%;
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0s ease-in-out;
 }
 
-.sidebar>div {
+.left-slide__item {
   height: 100%;
   width: 100%;
   padding: 20px;
@@ -38,36 +42,42 @@ body {
   color: #fff;
 }
 
-.sidebar h1 {
-  font-size: 40px;
+.left-slide h1 {
   margin-bottom: 10px;
   margin-top: -30px;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0.07em;
+}
+
+.left-slide p {
+  letter-spacing: 0.05em;
 }
 
 .main-slide {
   height: 100%;
+  width: 65%;
   position: absolute;
   top: 0;
   left: 35%;
-  width: 65%;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0s ease-in-out;
 }
 
 .main-slide>div {
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100%;
-  width: 100%;
 }
 
 button {
-  background-color: #fff;
+  padding: 15px;
   border: none;
+  font-size: 16px;
+  background-color: #fff;
   color: #aaa;
   cursor: pointer;
-  font-size: 16px;
-  padding: 15px;
 }
 
 button:hover {
@@ -78,39 +88,38 @@ button:focus {
   outline: none;
 }
 
-.container .controls button {
+.controls button {
   position: absolute;
   left: 35%;
   top: 50%;
-  z-index: 100;
+  z-index: 10;
 }
 
-.container .controls .down-button {
+.down-button {
   transform: translateX(-100%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.container .controls .up-button {
+.up-button {
   transform: translateY(-100%);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.slide {
+.main-slide__item {
   display: flex;
-  /* justify-content: center; */
   align-items: flex-end;
 }
 
-.slide h2 {
+.main-slide__item h2 {
   margin: 0 0 30px 40px;
   color: #fff;
   font-size: 40px;
   letter-spacing: 0.2em;
 }
 
-.side-slide h2 {
+.left-slide h2 {
   margin-top: 100px;
   letter-spacing: 0.2em;
 }

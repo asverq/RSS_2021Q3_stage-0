@@ -39,7 +39,8 @@
 //***Video Section
 .video__wrap {
     height: 100vh;
-    width: 100vw;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,20 +61,24 @@
 
     .btn-on-screen {
         height: 220px;
+        width: 220px;
+        font-size: 220px;
+        line-height: 220px;
+        color: #fff;
+        transition: all 0.3s;
 
-        &:hover svg path {
-            fill: rgb(128, 175, 236);
+        &:hover {
+            color:rgb(132, 171, 223);
         }
 
-        &:active svg path {
-            fill: rgb(97, 144, 206);
+        &:active {
+            color: rgb(97, 144, 206);
         }
     }
 
     &__bar {
         width: 100%;
-        // height: 85px;
-        height: 5em;
+        height: 5.3em;
         padding: 0 19px;
         display: flex;
         flex-direction: row;
@@ -83,23 +88,45 @@
 
         .btn {
             height: 30px;
+            font-size: 30px;
+            line-height: 30px;
+            color:#b3b3b3;
+            transition: all 0.3s;
 
-            &:hover svg path {
-                fill: #777;
+            &:hover {
+                color: #777;
             }
 
-            &:active svg path {
-                fill: #555;
+            &:active {
+                color: #555;
             }
         }
+
+        .btn-volume {
+            height: 34px;
+            padding-right: 15px;
+            font-size: 34px;
+            line-height: 34px;
+        }
+
         .btn-fullscreen {
             height: 36px;
+            font-size: 36px;
+            line-height: 36px;
         }
+    }
+
+    .icon {
+        padding: 0;
+        margin: 0;
+        font-family: 'video-buttons';
+        font-weight: normal;
+        font-style: normal;
     }
 
     &__valume-wrap {
         padding-left: 5px;
-        padding-right: 10px;
+        padding-right: 15px;
         display: flex;
         align-items: center;
     }
@@ -108,13 +135,14 @@
 
 
 .progress-bar {
+    margin-left: 10px;
     background: linear-gradient(to right,
-            #24809E 0%,
-            #24809E 40%,
-            #C4C4C4 40%,
-            #C4C4C4 100%);
+            #24809e 0%,
+            #24809e 40%,
+            #c4c4c4 40%,
+            #c4c4c4 100%);
     height: 7px;
-    width: 820px;
+    width: 60%;
     outline: none;
     cursor: pointer;
     transition: background 450ms ease-in;
@@ -123,16 +151,14 @@
 
 .progress-bar::-webkit-slider-thumb {
     width: 15px;
-    height: 15px;
+    height: 15px;    
     border-radius: 50%;
     -webkit-appearance: none;
     cursor: pointer;
-    background: #FFFFFF;
+    background: #ffffff;
 }
 
-.btn-volume {
-    padding-right: 20px;
-}
+
 
 .volume-bar {
     width: 155px;

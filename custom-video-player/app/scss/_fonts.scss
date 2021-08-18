@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'video-buttons';
+    src:
+        url('../fonts/video-buttons.ttf') format('truetype'),
+        url('../fonts/video-buttons.woff') format('woff'),
+        url('../fonts/video-buttons.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+._icon-fullscreen-btn:before {
+    content: "\e900";
+}
+
+._icon-next-btn:before {
+    content: "\e901";
+}
+
+._icon-play-btn:before {
+    content: "\e902";
+}
+
+._icon-prev-btn:before {
+    content: "\e903";
+}
+
+._icon-screen-play:before {
+    content: "\e904";
+}
+
+._icon-volume-btn:before {
+    content: "\e905";
+}
+
+._icon-fullscreen-btn_exit:before {
+    content: "\e906";
+}
+
+._icon-volume-btn_mute:before {
+    content: "\e907";
+}
+
+._icon-pause-btn:before {
+    content: "\e908";
+}

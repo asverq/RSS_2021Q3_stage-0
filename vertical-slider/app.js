@@ -34,8 +34,8 @@ function verticalSlider() {
 
     function setPosition() {
         setActiveSlide()
-        setTimeout(normalaizeDuration, 0)
         sidebar.style.top = `-${(countSlides - 1) * 100}%`
+        setTimeout(normalaizeDuration, 0)
     }
     setPosition()
 
@@ -154,29 +154,28 @@ function verticalSlider() {
         if (direction === 'up' && activeSlideIndex !== countSlides - 2) {
             scrollable = false
             activeSlideIndex++
-            setActiveSlide()
-            setTimeout(unblockScrollable, duration + 100)
+            setTimeout(unblockScrollable, duration + 170)
         } else if (direction === 'up' && activeSlideIndex === countSlides - 2) {
             scrollable = false
             activeSlideIndex++
-            setActiveSlide()
             setTimeout(() => resetActiveIndex(1), duration + 100)
-            setTimeout(unblockScrollable, duration + 100)
+            setTimeout(unblockScrollable, duration + 170)
         }
 
         if (direction === 'down' && activeSlideIndex !== 1) {
             scrollable = false
             activeSlideIndex--
-            setActiveSlide()
-            setTimeout(unblockScrollable, duration + 100)
+            setTimeout(unblockScrollable, duration + 170)
         } else if (direction === 'down' && activeSlideIndex === 1) {
             scrollable = false
             activeSlideIndex--
-            setActiveSlide()
             setTimeout(() => resetActiveIndex(countSlides - 2), duration + 100)
-            setTimeout(unblockScrollable, duration + 100)
+            setTimeout(unblockScrollable, duration + 170)
         }
+        setActiveSlide()
     }
+
+    mainSlide.addEventListener('transitionend', (event) => unblockScrollable())
 
     function setActiveSlide() {
         mainSlide.style.transform = `translateY(-${height * activeSlideIndex}px)`

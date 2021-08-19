@@ -5,12 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Louvre</title>
+  <title>Custom-Video-Player</title>
   <link type="image/svg" rel="icon" href="img/favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@100;300;400;500;700&display=swap"
-    rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -18,11 +14,12 @@
   <main class="main-block">
     <div class="video__wrap">
       <div class="video-player">
-        <div class="video-player__video">
-          <button class="btn btn-on-screen" aria-label="play button on screen">
-            <i class="_icon-screen-play icon"></i>
-          </button>
-        </div>
+        <video class="video-player__video" poster="img/video-image.jpg">
+          <source src="video/Waterfall - 37088.mp4" type="video/mp4">          
+        </video>
+        <button class="btn btn-on-screen" aria-label="play button on screen">
+          <i class="_icon-screen-play icon"></i>
+        </button>
         <div class="video-player__bar">
           <button class="btn prev-btn" aria-label="previous button">
             <i class="_icon-prev-btn icon"></i>

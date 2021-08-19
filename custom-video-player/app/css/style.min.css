@@ -406,12 +406,6 @@ template {
   background-color: transparent;
 }
 
-.btn svg path {
-  -webkit-transition: 0.3s all;
-  -o-transition: 0.3s all;
-  transition: 0.3s all;
-}
-
 .main-block {
   height: 100vh;
   width: 100vw;
@@ -433,11 +427,11 @@ template {
 }
 
 .video-player {
-  width: 100%;
+  position: relative;
 }
 
 .video-player__video {
-  height: 629px;
+  height: auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -448,12 +442,15 @@ template {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url(../img/video-image.jpg) no-repeat;
 }
 
 .video-player .btn-on-screen {
-  height: 220px;
-  width: 220px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: 220px;
   line-height: 220px;
   color: #fff;
@@ -539,7 +536,7 @@ template {
           align-items: center;
 }
 
-.progress-bar {
+.video-player .progress-bar {
   margin-left: 10px;
   background: -webkit-gradient(linear, left top, right top, from(#24809e), color-stop(40%, #24809e), color-stop(40%, #c4c4c4), to(#c4c4c4));
   background: -o-linear-gradient(left, #24809e 0%, #24809e 40%, #c4c4c4 40%, #c4c4c4 100%);
@@ -554,7 +551,7 @@ template {
   -webkit-appearance: none;
 }
 
-.progress-bar::-webkit-slider-thumb {
+.video-player .progress-bar::-webkit-slider-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -563,6 +560,6 @@ template {
   background: #ffffff;
 }
 
-.volume-bar {
-  width: 155px;
+.video-player .volume-bar {
+  width: 70%;
 }

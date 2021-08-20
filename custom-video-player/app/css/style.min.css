@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -435,6 +436,19 @@ template {
 
 .video-player {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 2px;
+  color: #24809E;
 }
 
 .video-player__video {
@@ -478,6 +492,7 @@ template {
   width: 100%;
   height: 5.3em;
   padding: 0 19px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -550,9 +565,6 @@ template {
   width: 60%;
   outline: none;
   cursor: pointer;
-  -webkit-transition: background 450ms ease-in;
-  -o-transition: background 450ms ease-in;
-  transition: background 450ms ease-in;
   -webkit-appearance: none;
 }
 
@@ -563,6 +575,27 @@ template {
   -webkit-appearance: none;
   cursor: pointer;
   background: #ffffff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.video-player .progress-bar::-webkit-slider-thumb:hover {
+  -webkit-box-shadow: inset 0 0 3px, 0 0 1px #0f1f49;
+          box-shadow: inset 0 0 3px, 0 0 1px #0f1f49;
+  background-color: #85c3e7;
+}
+
+.video-player .timer {
+  position: absolute;
+  top: 10px;
+  margin: 0 auto;
+}
+
+.video-player .speed {
+  position: absolute;
+  bottom: 15px;
+  margin: 0 auto;
 }
 
 .video-player .volume-bar {

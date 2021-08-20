@@ -49,6 +49,12 @@
 
 .video-player {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 2px;
+    color: #24809E;
 
     &__video {
         height: auto;
@@ -81,6 +87,7 @@
         width: 100%;
         height: 5.3em;
         padding: 0 19px;
+        position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -135,17 +142,11 @@
 
     .progress-bar {
         margin-left: 10px;
-        // background:
-        //     linear-gradient(to right,
-        //         #24809e 0%,
-        //         #24809e 40%,
-        //         #c4c4c4 40%,
-        //         #c4c4c4 100%);
         height: 7px;
         width: 60%;
         outline: none;
         cursor: pointer;
-        transition: background 450ms ease-in;
+        // transition: background 450ms ease-in;
         -webkit-appearance: none;
     }
 
@@ -156,6 +157,24 @@
         -webkit-appearance: none;
         cursor: pointer;
         background: #ffffff;
+        transition: all 0.3s;
+
+        &:hover {
+            box-shadow: inset 0 0 3px, 0 0 1px #0f1f49;
+            background-color: rgb(133, 195, 231);
+        }
+    }
+
+    .timer {
+        position: absolute;
+        top: 10px;
+        margin: 0 auto;       
+    }
+
+    .speed {
+        position: absolute;
+        bottom: 15px;
+        margin: 0 auto;       
     }
 
     .volume-bar {

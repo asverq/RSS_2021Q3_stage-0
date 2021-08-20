@@ -14,8 +14,8 @@
   <main class="main-block">
     <div class="video__wrap">
       <div class="video-player">
-        <video class="video-player__video" poster="img/video-image.jpg">
-          <source src="video/Waterfall - 37088.mp4" type="video/mp4">          
+        <video class="video-player__video" src="video/video-3.mp4" preload='metadata'>
+          <!-- <source id="video-source" src="video/video-3.mp4" type="video/mp4"> -->
         </video>
         <button class="btn btn-on-screen" aria-label="play button on screen">
           <i class="_icon-screen-play icon"></i>
@@ -30,13 +30,13 @@
           <button class="btn next-btn" aria-label=" next button">
             <i class="_icon-next-btn icon"></i>
           </button>
-          <input class="progress-bar" id="progress-bar" type="range" value="40" min="0" max="100" step="1">
+          <input class="progress-bar" id="progress-bar" type="range" value="0" min="0" max="100" step="0.1">
           <label class="visibility-hidden" for="progress-bar">progress bar</label>
           <div class="video-player__valume-wrap">
             <button class="btn btn-volume" aria-label="volume mute">
               <i class="_icon-volume-btn icon"></i>
             </button>
-            <input class="progress-bar volume-bar" id="volume-bar" type="range" value="40" min="0" max="100" step="1">
+            <input class="progress-bar volume-bar" id="volume-bar" type="range" value="0.5" min="0" max="1" step="0.05">
             <label class="visibility-hidden" for="volume-bar">volume bar</label>
           </div>
           <button class="btn btn-fullscreen" aria-label="fullscreen button">

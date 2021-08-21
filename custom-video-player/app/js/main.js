@@ -15,16 +15,16 @@ const
   videoTitle = document.querySelector('.video-title')
 
 const mediaArr = [
-  'Мультяшки от Pixar серия 1',
-  'Мультяшки от Pixar серия 2',
-  'Мультяшки от Pixar серия 3',
-  'Мультяшки от Pixar серия 4',
-  'Мультяшки от Pixar серия 5',
-  'Мультяшки от Pixar серия 6',
-  'Мультяшки от Pixar серия 7',
-  'Мультяшки от Pixar серия 8',
-  'Мультяшки от Pixar серия 9',
-  'Мультяшки от Pixar серия 10',
+  'Фитнесс не предел - серия 1',
+  'Непревзойдённая парковка - серия 2',
+  'Дори в поисках - серия 3',
+  'Душа города - серия 4',
+  'Даки и Бани: Любовь - серия 5',
+  'День уборки - серия 6',
+  'День из жизни мертвецов - серия 7',
+  'Даки и Бани: Три головы - серия 8',
+  'Танцы с Тачками - серия 9',
+  'Вкусная печенька - серия 10',
 ];
 
 let activeMedia = 0;
@@ -140,7 +140,7 @@ function setPlayerFullscreenStyles() {
     controls.style.position = 'absolute';
     controls.style.bottom = '0';
     fullsreenMode = true;
-  } else {
+  } else if (fullsreenMode === true) {
     controls.style.position = 'relative';
     fullsreenMode = false;
   }
@@ -170,6 +170,7 @@ function stopMedia() {
   media.currentTime = 0;
   playBtn.children[0].setAttribute('class', '_icon-play-btn icon');
   screenBtn.style.display = 'block';
+  speedBar.innerText = '1x';
 }
 
 function autoNextMedia() {

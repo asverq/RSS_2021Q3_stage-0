@@ -15,38 +15,40 @@
     <div class="video__wrap">
       <div class="video-player">
         <div class="video-body">
-          <video class="video-player__video" src="video/video-1.mp4" preload='metadata'></video>
+          <video class="video-player__video" src="video/video-1.mp4" poster="img/video-image.jpg" preload='metadata'></video>
         </div>
         <button class="btn btn-on-screen" aria-label="play button on screen">
           <i class="_icon-screen-play icon"></i>
         </button>
 
         <!-- Controls Bar -->
-        <div class="video-player__bar">
-          <span class="video-title">Current video-title</span>
-          <button class="btn prev-btn" aria-label="previous button">
-            <i class="_icon-prev-btn icon"></i>
-          </button>
-          <button class="btn play-btn" aria-label="play button">
-            <i class="_icon-play-btn icon"></i>
-          </button>
-          <button class="btn next-btn" aria-label=" next button">
-            <i class="_icon-next-btn icon"></i>
-          </button>
-          <input class="progress-bar" id="progress-bar" type="range" value="0" min="0" max="100" step="0.1">
-          <span class="timer">00:00:00</span>
-          <span class="speed">1x</span>
-          <label class="visibility-hidden" for="progress-bar">progress bar</label>
-          <div class="video-player__valume-wrap">
-            <button class="btn btn-volume" aria-label="volume mute">
-              <i class="_icon-volume-btn icon"></i>
+        <div class="controls-body">
+          <div class="video-player__bar">
+            <span class="video-title">Current video-title</span>
+            <button class="btn prev-btn" aria-label="previous button">
+              <i class="_icon-prev-btn icon"></i>
             </button>
-            <input class="progress-bar volume-bar" id="volume-bar" type="range" value="0.5" min="0" max="1" step="0.05">
-            <label class="visibility-hidden" for="volume-bar">volume bar</label>
+            <button class="btn play-btn" aria-label="play button">
+              <i class="_icon-play-btn icon"></i>
+            </button>
+            <button class="btn next-btn" aria-label=" next button">
+              <i class="_icon-next-btn icon"></i>
+            </button>
+            <input class="progress-bar" id="progress-bar" type="range" value="0" min="0" max="100" step="0.1">
+            <span class="timer">00:00:00</span>
+            <span class="speed">1x</span>
+            <label class="visibility-hidden" for="progress-bar">progress bar</label>
+            <div class="video-player__valume-wrap">
+              <button class="btn btn-volume" aria-label="volume mute">
+                <i class="_icon-volume-btn icon"></i>
+              </button>
+              <input class="progress-bar volume-bar" id="volume-bar" type="range" value="0.5" min="0" max="1" step="0.05">
+              <label class="visibility-hidden" for="volume-bar">volume bar</label>
+            </div>
+            <button class="btn btn-fullscreen" aria-label="fullscreen button">
+              <i class="_icon-fullscreen-btn icon"></i>
+            </button>
           </div>
-          <button class="btn btn-fullscreen" aria-label="fullscreen button">
-            <i class="_icon-fullscreen-btn icon"></i>
-          </button>
         </div>
       </div>
     </div>

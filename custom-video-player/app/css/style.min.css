@@ -446,6 +446,7 @@ template {
 .video-player .video-body {
   position: relative;
   padding: 0 0 56% 0;
+  overflow: hidden;
   background-color: #313131;
 }
 
@@ -481,11 +482,26 @@ template {
   color: #6190ce;
 }
 
+.video-player .controls-body {
+  height: 5.3em;
+  width: 100%;
+  position: relative;
+}
+
+.video-player .controls-body:hover .video-player__bar {
+  bottom: 0 !important;
+  -webkit-transition: bottom 0.3s ease-in-out 0.1s !important;
+  -o-transition: bottom 0.3s ease-in-out 0.1s !important;
+  transition: bottom 0.3s ease-in-out 0.1s !important;
+}
+
 .video-player__bar {
   width: 100%;
   height: 5.3em;
   padding: 0 19px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -498,7 +514,10 @@ template {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #000000;
+  background-color: #000;
+  -webkit-transition: bottom 0.3s ease-in-out 5s;
+  -o-transition: bottom 0.3s ease-in-out 5s;
+  transition: bottom 0.3s ease-in-out 5s;
 }
 
 .video-player__bar .video-title {

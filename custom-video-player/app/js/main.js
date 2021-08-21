@@ -5,15 +5,35 @@ const
   screenBtn = document.querySelector('.btn-on-screen'),
   playBtn = document.querySelector('.play-btn'),
   rwdBtn = document.querySelector('.prev-btn'),
-  fwdbtn = document.querySelector('.next-btn'),
+  fwdBtn = document.querySelector('.next-btn'),
   volumeBtn = document.querySelector('.btn-volume'),
   fullscreenBtn = document.querySelector('.btn-fullscreen'),
   volumeBar = document.querySelector(".volume-bar"),
   progressBar = document.querySelector(".progress-bar"),
   timerBar = document.querySelector(".timer"),
-  speedBar = document.querySelector(".speed")
+  speedBar = document.querySelector(".speed"),
+  videoTitle = document.querySelector('.video-title')
 
+const mediaArr = [
+  'Мультяшки от Pixar серия 1',
+  'Мультяшки от Pixar серия 2',
+  'Мультяшки от Pixar серия 3',
+  'Мультяшки от Pixar серия 4',
+  'Мультяшки от Pixar серия 5',
+  'Мультяшки от Pixar серия 6',
+  'Мультяшки от Pixar серия 7',
+  'Мультяшки от Pixar серия 8',
+  'Мультяшки от Pixar серия 9',
+  'Мультяшки от Pixar серия 10',
+];
+
+let activeMedia = 0;
 let fullsreenMode = false;
+
+function setVideoTitle() {
+  videoTitle.innerText = mediaArr[activeMedia];
+}
+setVideoTitle();
 
 function setPlayerReady() {
   media.volume = volumeBar.value;
@@ -31,9 +51,16 @@ setPlayerReady();
 
 let isShiftDown = false;
 
-media.addEventListener('ended', stopMedia)
+media.addEventListener('ended', stopMedia);
+media.addEventListener('ended', autoNextMedia);
 media.addEventListener('click', playPauseMedia);
 screenBtn.addEventListener('click', playPauseMedia);
+rwdBtn.addEventListener('click', function () {
+  changeMedia('rwd')
+});
+fwdBtn.addEventListener('click', function () {
+  changeMedia('fwd')
+});
 playBtn.addEventListener('click', playPauseMedia);
 volumeBtn.addEventListener('click', toggleMute);
 fullscreenBtn.addEventListener('click', toggleFullScreen)
@@ -71,6 +98,26 @@ document.addEventListener('keyup', (e) => {
   }
 })
 
+function changeMedia(order) {
+  if (order === 'rwd') {
+    stopMedia();
+    if (activeMedia > 0) {
+      activeMedia -= 1;
+      media.src = `video/video-${activeMedia + 1}.mp4`;
+      setVideoTitle();
+      setTimeout(updateProgressBar, 100);
+    }
+  } else if (order === 'fwd') {
+    stopMedia();
+    if (activeMedia < mediaArr.length - 1) {
+      activeMedia += 1;
+      media.src = `video/video-${activeMedia + 1}.mp4`;
+      setVideoTitle();
+      setTimeout(updateProgressBar, 100);
+    }
+  }
+}
+
 function speedPlay(arg) {
   if (arg === 'up') {
     if (media.playbackRate < 2.5) {
@@ -86,9 +133,9 @@ function speedPlay(arg) {
   }
 }
 
-document.addEventListener('fullscreenchange', setPlayerStyles);
+document.addEventListener('fullscreenchange', setPlayerFullscreenStyles);
 
-function setPlayerStyles() {
+function setPlayerFullscreenStyles() {
   if (fullsreenMode === false) {
     controls.style.position = 'absolute';
     controls.style.bottom = '0';
@@ -125,6 +172,15 @@ function stopMedia() {
   screenBtn.style.display = 'block';
 }
 
+function autoNextMedia() {
+  if (activeMedia === mediaArr.length - 1) {
+    stopMedia();
+    return;
+  }
+  changeMedia('fwd');
+  playPauseMedia();
+}
+
 function toggleMute() {
   if (media.muted) {
     volumeBtn.children[0].setAttribute('class', '_icon-volume-btn icon');
@@ -136,8 +192,8 @@ function toggleMute() {
 }
 
 //progress bar logics
-media.addEventListener('timeupdate', liveProgressBar);
-progressBar.addEventListener("input", liveSearchProgress);
+media.addEventListener('timeupdate', updateProgressBar);
+progressBar.addEventListener('input', liveSearchProgress);
 
 function liveSearchProgress() {
   const value = this.value;
@@ -166,7 +222,7 @@ function timer() {
   }`;
 }
 
-function liveProgressBar() {
+function updateProgressBar() {
   const position = (media.currentTime / media.duration) * 100;
   progressBar.value = position;
   progressBar.style.background = `

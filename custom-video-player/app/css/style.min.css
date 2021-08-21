@@ -435,6 +435,9 @@ template {
 }
 
 .video-player {
+  max-height: 900px;
+  max-width: 1440px;
+  width: 100%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -447,12 +450,11 @@ template {
       -ms-flex-pack: center;
           justify-content: center;
   font-family: 'Roboto Mono', monospace;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: #24809E;
 }
 
 .video-player__video {
-  height: auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -463,6 +465,7 @@ template {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #2e2d2d;
 }
 
 .video-player .btn-on-screen {
@@ -506,6 +509,12 @@ template {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #000000;
+}
+
+.video-player__bar .video-title {
+  position: absolute;
+  left: 30px;
+  top: -30px;
 }
 
 .video-player__bar .btn {

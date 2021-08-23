@@ -108,8 +108,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        background-color: #000;
-        transition: bottom 0.3s ease-in-out 5s;
+        background-color: #000;        
 
         .video-title {
             padding: 2px 12px 3px;
@@ -154,6 +153,7 @@
     &__bar.fullscreen {
         bottom: -120px;
         background-color: rgba(0, 0, 0, 0.7);
+        transition: bottom 0.3s ease-in-out 5s;
     }
 
     .controls-body {

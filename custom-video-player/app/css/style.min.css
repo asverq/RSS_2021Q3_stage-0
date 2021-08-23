@@ -515,9 +515,6 @@ template {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background-color: #000;
-  -webkit-transition: bottom 0.3s ease-in-out 5s;
-  -o-transition: bottom 0.3s ease-in-out 5s;
-  transition: bottom 0.3s ease-in-out 5s;
 }
 
 .video-player__bar .video-title {
@@ -564,6 +561,9 @@ template {
 .video-player__bar.fullscreen {
   bottom: -120px;
   background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: bottom 0.3s ease-in-out 5s;
+  -o-transition: bottom 0.3s ease-in-out 5s;
+  transition: bottom 0.3s ease-in-out 5s;
 }
 
 .video-player .controls-body {

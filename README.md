@@ -1,8 +1,8 @@
 # asverq-JSFEPRESCHOOL
 Private repository for @asverq
 ##
-[museum](https://rolling-scopes-school.github.io/asverq-JSFEPRESCHOOL/museum/)
+[museum](https://asverq.github.io/RSS_2021Q3_stage-0/museum/)
 ##
-[vertical-slider](https://rolling-scopes-school.github.io/asverq-JSFEPRESCHOOL/vertical-slider/)
+[vertical-slider](https://asverq.github.io/RSS_2021Q3_stage-0/vertical-slider/)
 ##
-[custom-video-player](https://rolling-scopes-school.github.io/asverq-JSFEPRESCHOOL/custom-video-player/)
+[custom-video-player](https://asverq.github.io/RSS_2021Q3_stage-0/custom-video-player/)
